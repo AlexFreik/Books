@@ -1,0 +1,54 @@
+\documentclass[
+a4paper, % Stock and paper size.
+12pt, % Type size.
+% article,
+% oneside, 
+onecolumn, % Only one column of text on a page.
+% openright, % Each chapter will start on a recto page.
+% openleft, % Each chapter will start on a verso page.
+openany, % A chapter may start on either a recto or verso page.
+]{memoir}
+
+
+\input{preamble}
+
+\begin{document}
+\let\cleardoublepage\clearpage
+%=======================================================================
+\frontmatter
+\setlength{\voffset}{1.5cm}
+\includepdf[pages=1,width=\paperwidth]{img/FoodBody_cover_rus_compressed.pdf}
+\setlength{\voffset}{0cm}
+
+\pagestyle{empty}
+\titleJT
+\cleardoublepage
+\clearpage
+
+\pagestyle{standard}
+\input{units/frontmatter/colophon}
+
+\tableofcontents
+
+\clearpage
+\pagestyle{chap}
+\input{units/frontmatter/intro}
+
+%==========================================================================	
+\mainmatter
+
+\input{units/mainmatter/1}
+\input{units/mainmatter/2}
+\input{units/mainmatter/3}
+
+
+\backmatter
+
+%%% BIBLIOGRAPHY
+%%% -------------------------------------------------------------
+
+% \bibliographystyle{utphysics}
+% \bibliography{ref}
+\printbibliography
+
+\end{document}

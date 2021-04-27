@@ -1,0 +1,31 @@
+\ifpdf
+  \usepackage{pdfcolmk}
+\fi
+%% check if using xelatex rather than pdflatex
+\ifxetex
+  \usepackage{fontspec}
+\fi
+\usepackage{graphicx}
+%% for dingbats
+\usepackage{pifont}
+\newlength{\drop}% for my convenience
+
+%% Generic publisher’s logo
+\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}}
+
+
+
+
+
+\newcommand*{\titleJT}{\begingroup% Jan Tschichold: typographer
+\drop = 0.08\textheight
+\vspace*{\drop}
+\hspace*{0.3\textwidth}
+{\Large Фонд Иша}\\[2\drop]
+\hspace*{0.3\textwidth}{\Huge\itshape \textit{Еда и Тело} }\par
+{\raggedleft\Huge\itshape Гайд в Здоровье \& Целостность\par}
+\vfill
+\hspace*{0.3\textwidth}{\includegraphics[width=0.1\linewidth]{img/isha_logo}}\\[0.5\baselineskip]
+\hspace*{0.3\textwidth}{\Large }
+\vspace*{\drop}
+\endgroup}
