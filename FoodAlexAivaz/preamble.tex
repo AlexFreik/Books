@@ -15,6 +15,7 @@
 \usepackage{tikz} % Figures
 \usepackage{graphicx}  % Include figures
 \usepackage{wrapfig}
+\graphicspath{{img/}{../img/}}
 
 %%% PAGE LAYOUT 
 %%%------------------------------------------------------------------------------
@@ -199,3 +200,30 @@ pdfauthor={I am the Author} % author
 %%% indenting
 \setlength{\parindent}{0em}
 \setlength{\parskip}{0.5em}
+
+
+%%%%%%%% Nice quote for recipes advice
+% for adjustwidth environment
+% \usepackage[strict]{changepage}
+
+% for formal definitions
+\usepackage{framed}
+
+% environment derived from framed.sty: see leftbar environment definition
+\definecolor{formalshade}{rgb}{0.95,0.95,1}
+
+\newenvironment{formal}{%
+  \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{black}\vrule width 2pt}%
+    {\color{formalshade}\vrule width 4pt}%
+    \colorbox{formalshade}%
+  }%
+  \MakeFramed{\advance\hsize-\width\FrameRestore}%
+  \noindent\hspace{-4.55pt}% disable indenting first paragraph
+  \begin{adjustwidth}{}{7pt}%
+  \vspace{2pt}\vspace{2pt}%
+}
+{%
+  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}

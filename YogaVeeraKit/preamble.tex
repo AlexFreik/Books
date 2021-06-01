@@ -11,10 +11,12 @@
 
 \usepackage{amsmath,amssymb,mathtools} % Math
 
+%%% Figures and colors
 \usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
 \usepackage{tikz} % Figures
 \usepackage{graphicx}  % Include figures
 \usepackage{wrapfig}
+\graphicspath{{img/}{../img/}} 
 
 %%% PAGE LAYOUT 
 %%%------------------------------------------------------------------------------
@@ -22,6 +24,9 @@
 \setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left and right margin
 \setulmarginsandblock{0.2\paperwidth}{*}{1}  % Upper and lower margin
 \checkandfixthelayout
+%%% indenting
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
 
 %%% SECTIONAL DIVISIONS
 %%%------------------------------------------------------------------------------
@@ -196,6 +201,8 @@ pdfauthor={I am the Author} % author
 \addbibresource{units/backmatter/mybib.bib}
 \usepackage{csquotes}  % recomended to add
 
-%%% indenting
-\setlength{\parindent}{0em}
-\setlength{\parskip}{0.5em}
+
+%%% correct footnontes in tables
+\usepackage{footnote}
+\makesavenoteenv{tabular}  
+\makesavenoteenv{table}
