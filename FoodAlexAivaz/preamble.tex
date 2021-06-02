@@ -227,3 +227,60 @@ pdfauthor={I am the Author} % author
 {%
   \vspace{2pt}\end{adjustwidth}\endMakeFramed%
 }
+
+
+%%%%
+\usepackage{multicol}
+\usepackage{paracol}
+\usepackage{ifthen} 
+\newenvironment{advice}
+{%
+\begin{formal}
+\begin{itemize}%
+}{%
+\end{itemize}
+\end{formal}%
+}
+
+\newcommand{\recipe}[8]
+{%
+\newpage
+\begin{tikzpicture}
+\draw[orange,thick] (0,0) -- (\textwidth,0);
+\draw[orange,thick] (0,0.1) -- (\textwidth,0.1);
+\end{tikzpicture}
+\subsection*{\Large #1}
+\addcontentsline{toc}{subsection}{#1}
+\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин. \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{? литра (?–? порций)}{#3} 
+
+\begin{tikzpicture}
+\draw[orange,thick] (0,0) -- (\textwidth,0);
+\draw[orange,thick] (0,0.1) -- (\textwidth,0.1);
+\end{tikzpicture}
+
+\begin{paracol}{2}
+\textbf{\large Ингредиенты}
+\begin{itemize}
+#4
+\end{itemize}
+\vspace{100pt}
+
+\switchcolumn
+\textbf{Специи}
+\begin{itemize}
+#5
+\end{itemize}
+\end{paracol}
+
+
+\textbf{\large Метод}
+
+#6
+#7
+
+\ifthenelse{\equal{#8}{}}{}{%
+\tikz[remember picture,overlay] \node[opacity=0.20,inner sep=0pt] at (current page.center){\includegraphics[width=0.8\paperwidth]{#8}};} 
+}
+
+
+
