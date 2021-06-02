@@ -28,8 +28,8 @@ openany, % A chapter may start on either a recto or verso page.
 \pagestyle{standard}
 \input{units/frontmatter/colophon}
 
-\tableofcontents
 
+\tableofcontents\label{TOC}
 \clearpage
 \pagestyle{chap}
 \input{units/frontmatter/intro}
@@ -39,8 +39,13 @@ openany, % A chapter may start on either a recto or verso page.
 
 \input{units/mainmatter/1}
 \input{units/mainmatter/2}
+
+\chapter{Рецепты}
+\input{units/mainmatter/5}
 \input{units/mainmatter/3}
 \input{units/mainmatter/4}
+\input{units/mainmatter/6}
+\input{units/mainmatter/7}
 
 
 \backmatter
@@ -50,6 +55,6 @@ openany, % A chapter may start on either a recto or verso page.
 
 % \bibliographystyle{utphysics}
 % \bibliography{ref}
-\printbibliography
+% \printbibliography
 
 \end{document}

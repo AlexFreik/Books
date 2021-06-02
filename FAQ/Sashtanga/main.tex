@@ -68,13 +68,43 @@ pdfauthor={I am the Author} % author
 
 
 
-
+% Defining a new coordinate system for the page:
+%
+% --------------------------
+% |(-1,1)    (0,1)    (1,1)|
+% |                        |
+% |(-1,0)    (0,0)    (1,0)|
+% |                        |
+% |(-1,-1)   (0,-1)  (1,-1)|
+% --------------------------
+\makeatletter
+\def\parsecomma#1,#2\endparsecomma{\def\page@x{#1}\def\page@y{#2}}
+\tikzdeclarecoordinatesystem{page}{
+    \parsecomma#1\endparsecomma
+    \pgfpointanchor{current page}{north east}
+    % Save the upper right corner
+    \pgf@xc=\pgf@x%
+    \pgf@yc=\pgf@y%
+    % save the lower left corner
+    \pgfpointanchor{current page}{south west}
+    \pgf@xb=\pgf@x%
+    \pgf@yb=\pgf@y%
+    % Transform to the correct placement
+    \pgfmathparse{(\pgf@xc-\pgf@xb)/2.*\page@x+(\pgf@xc+\pgf@xb)/2.}
+    \expandafter\pgf@x\expandafter=\pgfmathresult pt
+    \pgfmathparse{(\pgf@yc-\pgf@yb)/2.*\page@y+(\pgf@yc+\pgf@yb)/2.}
+    \expandafter\pgf@y\expandafter=\pgfmathresult pt
+}
+\makeatother
 
 
 \begin{document}
-\chapter*{Часто задаваемые вопросы (Саштанга)}
-\tikz[remember picture,overlay] \node[opacity=0.15,inner sep=0pt] at (current page.center){\includegraphics[width=0.5\paperwidth,height=0.5\paperheight]{IshaLogo}};
+
+\section*{\Large Часто задаваемые вопросы (Саштанга)}
+
+\tikz[remember picture,overlay] \node[opacity=0.9,inner sep=0pt] at (page cs:0.8,0.8){\includegraphics[width=0.1\paperwidth]{IshaLogo}};
 \begin{enumerate}
+    
     \item \textbf{Кто может заниматься этой практикой?}
 
 За исключением беременных женщин, заниматься этой практикой может любой, в том
@@ -145,7 +175,7 @@ pdfauthor={I am the Author} % author
 постепенно наращивать время до 6-7 минут.
 
 
-\tikz[remember picture,overlay] \node[opacity=0.15,inner sep=0pt] at (current page.center){\includegraphics[width=0.5\paperwidth,height=0.5\paperheight]{IshaLogo}};
+% \tikz[remember picture,overlay] \node[opacity=0.15,inner sep=0pt] at (current page.center){\includegraphics[width=0.2\paperwidth]{IshaLogo}};
 
 
 
@@ -193,6 +223,7 @@ pdfauthor={I am the Author} % author
 
 Если у вас остались вопросы по практике, напишите нам по адресу \\ 
 sadhanasupport.russian@ishafoundation.org или \href{https://isha.sadhguru.org/in/en/yoga-meditation/yoga-teacher-training/hatha-yoga-teacher-training/teachers-in-your-area}{свяжитесь с преподавателем хатха-йоги}.
-\tikz[remember picture,overlay] \node[opacity=0.15,inner sep=0pt] at (current page.center){\includegraphics[width=0.5\paperwidth,height=0.5\paperheight]{IshaLogo}};
+
+\tikz[remember picture,overlay] \node[opacity=0.15,inner sep=0pt] at (current page.center){\includegraphics[width=0.2\paperwidth]{IshaLogo}};
 
 \end{document}

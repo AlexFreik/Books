@@ -12,10 +12,41 @@
 \usepackage{amsmath,amssymb,mathtools} % Math
 
 \usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
-\usepackage{tikz} % Figures
+\usepackage{tikz} % Figures. Following colors are predefined: red, green, blue, cyan, magenta, yellow, black, gray, darkgray, lightgray, brown, lime, olive, orange, pink, purple, teal, violet and white.
+
+% Defining a new coordinate system for the page:
+%
+% --------------------------
+% |(-1,1)    (0,1)    (1,1)|
+% |                        |
+% |(-1,0)    (0,0)    (1,0)|
+% |                        |
+% |(-1,-1)   (0,-1)  (1,-1)|
+% --------------------------
+\makeatletter
+\def\parsecomma#1,#2\endparsecomma{\def\page@x{#1}\def\page@y{#2}}
+\tikzdeclarecoordinatesystem{page}{
+    \parsecomma#1\endparsecomma
+    \pgfpointanchor{current page}{north east}
+    % Save the upper right corner
+    \pgf@xc=\pgf@x%
+    \pgf@yc=\pgf@y%
+    % save the lower left corner
+    \pgfpointanchor{current page}{south west}
+    \pgf@xb=\pgf@x%
+    \pgf@yb=\pgf@y%
+    % Transform to the correct placement
+    \pgfmathparse{(\pgf@xc-\pgf@xb)/2.*\page@x+(\pgf@xc+\pgf@xb)/2.}
+    \expandafter\pgf@x\expandafter=\pgfmathresult pt
+    \pgfmathparse{(\pgf@yc-\pgf@yb)/2.*\page@y+(\pgf@yc+\pgf@yb)/2.}
+    \expandafter\pgf@y\expandafter=\pgfmathresult pt
+}
+\makeatother
+
 \usepackage{graphicx}  % Include figures
 \usepackage{wrapfig}
 \graphicspath{{img/}{../img/}}
+
 
 %%% PAGE LAYOUT 
 %%%------------------------------------------------------------------------------
@@ -80,6 +111,10 @@
 
 %%% HEADER AND FOOTER 
 %%%------------------------------------------------------------------------------
+\usepackage{nameref}
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
 
 \makepagestyle{standard} % Make standard pagestyle
 
@@ -109,9 +144,9 @@
 \makeatletter
 \makeevenfoot{chap}{}{\small\bfseries\thepage}{} % Define new chapter pagestyle
 \makeoddfoot{chap}{}{\small\bfseries\thepage}{}  %
-\makeevenhead{chap}{}{}{}   %
-\makeoddhead{chap}{}{}{}    %
-% \makeheadrule{chap}{\textwidth}{\normalrulethickness}
+\makeevenhead{chap}{\currentname}{}{\hyperref[TOC]{Оглавление}}   %
+\makeoddhead{chap}{\hyperref[TOC]{Оглавление}}{}{\currentname}    %
+\makeheadrule{chap}{\textwidth}{\normalrulethickness}
 \makeatother
 
 \nouppercaseheads
@@ -215,7 +250,7 @@ pdfauthor={I am the Author} % author
 \newenvironment{formal}{%
   \def\FrameCommand{%
     \hspace{1pt}%
-    {\color{black}\vrule width 2pt}%
+    {\color{darkgray}\vrule width 2pt}%
     {\color{formalshade}\vrule width 4pt}%
     \colorbox{formalshade}%
   }%
@@ -246,32 +281,32 @@ pdfauthor={I am the Author} % author
 {%
 \newpage
 \begin{tikzpicture}
-\draw[orange,thick] (0,0) -- (\textwidth,0);
-\draw[orange,thick] (0,0.1) -- (\textwidth,0.1);
+\draw[black,thick] (0,0) -- (\textwidth,0);
+\draw[black,thick] (0,0.1) -- (\textwidth,0.1);
 \end{tikzpicture}
 \subsection*{\Large #1}
 \addcontentsline{toc}{subsection}{#1}
-\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин. \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{? литра (?–? порций)}{#3} 
+\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин. \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{? литра (? порций)}{#3} 
 
 \begin{tikzpicture}
-\draw[orange,thick] (0,0) -- (\textwidth,0);
-\draw[orange,thick] (0,0.1) -- (\textwidth,0.1);
+\draw[gray,thick] (0,0) -- (\textwidth,0);
+\draw[gray,thick] (0,0.1) -- (\textwidth,0.1);
 \end{tikzpicture}
 
-\begin{paracol}{2}
+\begin{multicols}{2}
 \textbf{\large Ингредиенты}
 \begin{itemize}
 #4
 \end{itemize}
 \vspace{100pt}
 
-\switchcolumn
+\columnbreak
 \textbf{Специи}
 \begin{itemize}
 #5
 \end{itemize}
-\end{paracol}
-
+\end{multicols}
+\nointerlineskip
 
 \textbf{\large Метод}
 
@@ -279,7 +314,7 @@ pdfauthor={I am the Author} % author
 #7
 
 \ifthenelse{\equal{#8}{}}{}{%
-\tikz[remember picture,overlay] \node[opacity=0.20,inner sep=0pt] at (current page.center){\includegraphics[width=0.8\paperwidth]{#8}};} 
+\tikz[remember picture,overlay] \node[opacity=0.20,inner sep=0pt] at (page cs:0,-0.5){\includegraphics[height=0.5\paperwidth]{#8}};} 
 }
 
 
