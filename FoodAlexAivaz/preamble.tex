@@ -277,16 +277,16 @@ pdfauthor={I am the Author} % author
 \end{formal}%
 }
 %%%%% to center unnumbered subsections to create fancy recipe
-\usepackage{titlesec}
-% from the titlesec package
-%\titleformat{ command }
-%             [ shape ]
-%             { format }{ label }{ sep }{ before-code }[ after-code ]
-% \section*
-\titleformat{name=\subsection,numberless}
-{\filcenter\Large\bfseries}{}{0pt}{}
-%{\vspace{-15pt} \hrulefill}{-13pt}    {\scshape\LARGE\bfseries}[\vspace{-25pt}]
-\titlespacing*{name=\subsection,numberless}{0pt}{0pt}{-9pt}
+% \usepackage{titlesec}
+% % from the titlesec package
+% %\titleformat{ command }
+% %             [ shape ]
+% %             { format }{ label }{ sep }{ before-code }[ after-code ]
+% % \section*
+% \titleformat{name=\subsection,numberless}
+% {\filcenter\Large\bfseries}{}{0pt}{}
+% %{\vspace{-15pt} \hrulefill}{-13pt}    {\scshape\LARGE\bfseries}[\vspace{-25pt}]
+% \titlespacing*{name=\subsection,numberless}{0pt}{0pt}{-5pt}
 
 
 \newcommand{\recipe}[8]
@@ -306,7 +306,7 @@ pdfauthor={I am the Author} % author
 % }
 % {\vspace{-30pt}
 
-\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин. \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{? литра (? порций)}{#3}
+\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{? литра (? порций)}{#3}
 % }
 
 \begin{tikzpicture}

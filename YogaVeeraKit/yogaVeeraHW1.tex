@@ -1,3 +1,110 @@
+\documentclass[
+a4paper, % Stock and paper size.
+12pt, % Type size.
+article,
+% oneside, 
+onecolumn, % Only one column of text on a page.
+% openright, % Each chapter will start on a recto page.
+% openleft, % Each chapter will start on a verso page.
+openany, % A chapter may start on either a recto or verso page.
+]{memoir}
+
+%%% PACKAGES 
+%%%------------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc} % If utf8 encoding
+% \usepackage[lantin1]{inputenc} % If not utf8 encoding, then this is probably the way to go
+\usepackage[T1]{fontenc}    %
+\usepackage[english,russian]{babel} % English please
+\usepackage[final]{microtype} % Less badboxes
+
+% \usepackage{kpfonts} %Font
+
+\usepackage{amsmath,amssymb,mathtools} % Math
+
+%%% Figures and colors
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\usepackage{tikz} % Figures
+\usepackage{graphicx}  % Include figures
+\usepackage{wrapfig}
+\graphicspath{{img/}{../img/}}
+
+%%% PAGE LAYOUT 
+%%%------------------------------------------------------------------------------
+
+\setlrmarginsandblock{0.08\paperwidth}{*}{1} % Left and right margin
+\setulmarginsandblock{0.15\paperwidth}{*}{1}  % Upper and lower margin
+\checkandfixthelayout
+%%% indenting
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+
+%%% INTERNAL HYPERLINKS
+%%%-------------------------------------------------------------------------------
+
+\usepackage{hyperref}   % Internal hyperlinks
+\hypersetup{
+pdfborder={0 0 0},      % No borders around internal hyperlinks
+pdfauthor={I am the Author} % author
+}
+% ----------- hyper ref -----------
+\usepackage{hyperref}
+
+
+\newcommand{\linkcolor}{blue}
+\newcommand{\citecolor}{blue}
+\newcommand{\filecolor}{magenta}
+\newcommand{\urlcolor}{NavyBlue}
+\hypersetup{				% Гиперссылки
+	unicode=true,           % русские буквы в раздела PDF\\
+	pdfstartview=FitH,
+	colorlinks=true,  % false: ссылки в рамках; true: цветные ссылки
+	linkcolor=\linkcolor,         % внутренние ссылки
+	citecolor=\citecolor,        % на библиографию
+	filecolor=\filecolor,      % на файлы
+	urlcolor=\urlcolor,      % на URL
+}
+\usepackage{memhfixc}   %
+
+
+
+% Defining a new coordinate system for the page:
+%
+% --------------------------
+% |(-1,1)    (0,1)    (1,1)|
+% |                        |
+% |(-1,0)    (0,0)    (1,0)|
+% |                        |
+% |(-1,-1)   (0,-1)  (1,-1)|
+% --------------------------
+\makeatletter
+\def\parsecomma#1,#2\endparsecomma{\def\page@x{#1}\def\page@y{#2}}
+\tikzdeclarecoordinatesystem{page}{
+    \parsecomma#1\endparsecomma
+    \pgfpointanchor{current page}{north east}
+    % Save the upper right corner
+    \pgf@xc=\pgf@x%
+    \pgf@yc=\pgf@y%
+    % save the lower left corner
+    \pgfpointanchor{current page}{south west}
+    \pgf@xb=\pgf@x%
+    \pgf@yb=\pgf@y%
+    % Transform to the correct placement
+    \pgfmathparse{(\pgf@xc-\pgf@xb)/2.*\page@x+(\pgf@xc+\pgf@xb)/2.}
+    \expandafter\pgf@x\expandafter=\pgfmathresult pt
+    \pgfmathparse{(\pgf@yc-\pgf@yb)/2.*\page@y+(\pgf@yc+\pgf@yb)/2.}
+    \expandafter\pgf@y\expandafter=\pgfmathresult pt
+}
+\makeatother
+
+%%% for beautiful icons
+\usepackage{fontawesome}
+
+
+\begin{document}
+
+\tikz[remember picture,overlay] \node[opacity=0.9,inner sep=0pt] at (page cs:0.8,0.8){\includegraphics[width=0.1\paperwidth]{IshaLogo}};
+
 \section*{Инструкции к первой домашней работе}
 \label{sec:homework}
 \addcontentsline{toc}{section}{\nameref{sec:homework}}
@@ -53,4 +160,5 @@
 ощущениями от проведённой сессии.
 \end{itemize} 
 
+\end{document}
 
