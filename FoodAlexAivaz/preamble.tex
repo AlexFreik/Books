@@ -283,18 +283,18 @@ pdfauthor={I am the Author} % author
 %             [ shape ]
 %             { format }{ label }{ sep }{ before-code }[ after-code ]
 % \section*
-%\titleformat{name=\subsection,numberless}
-%{\filcenter\Large\bfseries}{}{0pt}{}
+\titleformat{name=\subsection,numberless}
+{\filcenter\Large\bfseries}{}{0pt}{}
 %{\vspace{-15pt} \hrulefill}{-13pt}    {\scshape\LARGE\bfseries}[\vspace{-25pt}]
-%\titlespacing*{name=\subsection,numberless}{0pt}{0pt}{-9pt}
+\titlespacing*{name=\subsection,numberless}{0pt}{0pt}{-9pt}
 
 
 \newcommand{\recipe}[8]
 {%
 \newpage
-%\subsection*{\emph{\huge #1}}
+\subsection*{\emph{\huge #1}}
 \addcontentsline{toc}{subsection}{#1}
-%%% try to use just text, instead of sec but sec is OK
+%%% try to use just text, instead of sec, but sec is OK
 % \par
 % \noindent\makebox[\textwidth][c]{%
 %     \begin{minipage}{0.6\textwidth}
