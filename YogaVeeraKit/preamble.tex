@@ -22,7 +22,7 @@
 %%%------------------------------------------------------------------------------
 
 \setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left and right margin
-\setulmarginsandblock{0.2\paperwidth}{*}{1}  % Upper and lower margin
+\setulmarginsandblock{0.15\paperwidth}{*}{1}  % Upper and lower margin
 \checkandfixthelayout
 %%% indenting
 \setlength{\parindent}{0em}
@@ -111,11 +111,11 @@
 \makepagestyle{chap} % Make new chapter pagestyle
 
 \makeatletter
-\makeevenfoot{chap}{}{\small\bfseries\thepage}{} % Define new chapter pagestyle
-\makeoddfoot{chap}{}{\small\bfseries\thepage}{}  %
-\makeevenhead{chap}{}{}{}   %
-\makeoddhead{chap}{}{}{}    %
-% \makeheadrule{chap}{\textwidth}{\normalrulethickness}
+\makeevenfoot{chap}{}{}{} % Define new chapter pagestyle
+\makeoddfoot{chap}{}{}{}  %
+\makeevenhead{chap}{\small\bfseries\thepage}{}{\hyperref[TOC]{Оглавление}}   %
+\makeoddhead{chap}{\hyperref[TOC]{Оглавление}}{}{\small\bfseries\thepage}    %
+\makeheadrule{chap}{\textwidth}{\normalrulethickness}
 \makeatother
 
 \nouppercaseheads

@@ -52,7 +52,7 @@
 %%%------------------------------------------------------------------------------
 
 \setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left and right margin
-\setulmarginsandblock{0.2\paperwidth}{*}{1}  % Upper and lower margin
+\setulmarginsandblock{0.1\paperwidth}{*}{1}  % Upper and lower margin
 \checkandfixthelayout
 
 %%% SECTIONAL DIVISIONS
@@ -142,10 +142,10 @@
 \makepagestyle{chap} % Make new chapter pagestyle
 
 \makeatletter
-\makeevenfoot{chap}{}{\small\bfseries\thepage}{} % Define new chapter pagestyle
-\makeoddfoot{chap}{}{\small\bfseries\thepage}{}  %
-\makeevenhead{chap}{\currentname}{}{\hyperref[TOC]{Оглавление}}   %
-\makeoddhead{chap}{\hyperref[TOC]{Оглавление}}{}{\currentname}    %
+\makeevenfoot{chap}{}{}{} % Define new chapter pagestyle
+\makeoddfoot{chap}{}{}{}  %
+\makeevenhead{chap}{\small\bfseries\thepage}{}{\hyperref[TOC]{Оглавление}}   %
+\makeoddhead{chap}{\hyperref[TOC]{Оглавление}}{}{\small\bfseries\thepage}    %
 \makeheadrule{chap}{\textwidth}{\normalrulethickness}
 \makeatother
 
@@ -276,17 +276,38 @@ pdfauthor={I am the Author} % author
 \end{itemize}
 \end{formal}%
 }
+%%%%% to center unnumbered subsections to create fancy recipe
+\usepackage{titlesec}
+% from the titlesec package
+%\titleformat{ command }
+%             [ shape ]
+%             { format }{ label }{ sep }{ before-code }[ after-code ]
+% \section*
+%\titleformat{name=\subsection,numberless}
+%{\filcenter\Large\bfseries}{}{0pt}{}
+%{\vspace{-15pt} \hrulefill}{-13pt}    {\scshape\LARGE\bfseries}[\vspace{-25pt}]
+%\titlespacing*{name=\subsection,numberless}{0pt}{0pt}{-9pt}
+
 
 \newcommand{\recipe}[8]
 {%
 \newpage
-\begin{tikzpicture}
-\draw[black,thick] (0,0) -- (\textwidth,0);
-\draw[black,thick] (0,0.1) -- (\textwidth,0.1);
-\end{tikzpicture}
-\subsection*{\Large #1}
+%\subsection*{\emph{\huge #1}}
 \addcontentsline{toc}{subsection}{#1}
-\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин. \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{? литра (? порций)}{#3} 
+%%% try to use just text, instead of sec but sec is OK
+% \par
+% \noindent\makebox[\textwidth][c]{%
+%     \begin{minipage}{0.6\textwidth}
+%         \centering
+%         \textbf{\emph{\huge #1}}
+%     \end{minipage}
+% 
+% 
+% }
+% {\vspace{-30pt}
+
+\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин. \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{? литра (? порций)}{#3}
+% }
 
 \begin{tikzpicture}
 \draw[gray,thick] (0,0) -- (\textwidth,0);
