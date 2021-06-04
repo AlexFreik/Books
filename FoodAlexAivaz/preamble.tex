@@ -306,7 +306,7 @@ pdfauthor={I am the Author} % author
 % }
 % {\vspace{-30pt}
 
-\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{? литра (? порций)}{#3}
+\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{?}{#3} кг
 % }
 
 \begin{tikzpicture}
@@ -335,7 +335,8 @@ pdfauthor={I am the Author} % author
 #7
 
 \ifthenelse{\equal{#8}{}}{}{%
-\tikz[remember picture,overlay] \node[opacity=0.20,inner sep=0pt] at (page cs:0,-0.5){\includegraphics[height=0.5\paperwidth]{#8}};} 
+% \tikz[remember picture,overlay] \node[opacity=0.20,inner sep=0pt] at (page cs:0,-0.5){\includegraphics[height=0.5\paperwidth]{#8}};%
+} 
 }
 
 
