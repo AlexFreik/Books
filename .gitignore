@@ -279,4 +279,5 @@ TSWLatexianTemp*
 *.DS_Store
 *~
 *.pdf
+*.pdf.icloud
 *.swo

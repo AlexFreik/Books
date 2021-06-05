@@ -13,14 +13,16 @@ openany, % A chapter may start on either a recto or verso page.
 \input{preamble}
 
 \begin{document}
+\pagestyle{empty}
 \let\cleardoublepage\clearpage
 %=======================================================================
 \frontmatter
+<красивая обложка>
+\newpage
 \setlength{\voffset}{1.5cm}
-\includepdf[pages=1,width=\paperwidth]{img/FoodBody_cover_rus_compressed.pdf}
+%\includepdf[pages=1,width=\paperwidth]{img/FoodBody_cover_rus_compressed.pdf}
 \setlength{\voffset}{0cm}
 
-\pagestyle{empty}
 \titleJT
 \cleardoublepage
 \clearpage
@@ -46,6 +48,7 @@ openany, % A chapter may start on either a recto or verso page.
 \input{units/mainmatter/4}
 \input{units/mainmatter/6}
 \input{units/mainmatter/7}
+\input{units/mainmatter/8}
 
 \backmatter
 \input{units/backmatter/lastWords}

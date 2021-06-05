@@ -289,11 +289,11 @@ pdfauthor={I am the Author} % author
 % \titlespacing*{name=\subsection,numberless}{0pt}{0pt}{-5pt}
 
 
-\newcommand{\recipe}[8]
+\newcommand{\recipe}[9][Специи]
 {%
 \newpage
-\subsection*{\emph{\huge #1}}
-\addcontentsline{toc}{subsection}{#1}
+\subsection*{\emph{\huge #2}}
+\addcontentsline{toc}{subsection}{#2}
 %%% try to use just text, instead of sec, but sec is OK
 % \par
 % \noindent\makebox[\textwidth][c]{%
@@ -306,7 +306,7 @@ pdfauthor={I am the Author} % author
 % }
 % {\vspace{-30pt}
 
-\faClockO\ \ifthenelse{\equal{#2}{}}{?}{#2} мин \hfill \faSpoon\ \ifthenelse{\equal{#3}{}}{?}{#3} кг
+\faClockO\ \ifthenelse{\equal{#3}{}}{?}{#3} мин \hfill \faSpoon\ \ifthenelse{\equal{#4}{}}{?}{#4} кг
 % }
 
 \begin{tikzpicture}
@@ -317,24 +317,26 @@ pdfauthor={I am the Author} % author
 \begin{multicols}{2}
 \textbf{\large Ингредиенты}
 \begin{itemize}
-#4
+#5
 \end{itemize}
 \vspace{100pt}
 
 \columnbreak
-\textbf{Специи}
+\textbf{#1}
 \begin{itemize}
-#5
+#6
 \end{itemize}
 \end{multicols}
 \nointerlineskip
 
+\ifthenelse{\equal{#7}{}}{}{
 \textbf{\large Метод}
 
-#6
 #7
+}
+#8
 
-\ifthenelse{\equal{#8}{}}{}{%
+\ifthenelse{\equal{#9}{}}{}{%
 % \tikz[remember picture,overlay] \node[opacity=0.20,inner sep=0pt] at (page cs:0,-0.5){\includegraphics[height=0.5\paperwidth]{#8}};%
 } 
 }
