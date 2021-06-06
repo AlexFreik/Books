@@ -160,7 +160,14 @@ pdfauthor={I am the Author} % author
 	citecolor=\citecolor,        % на библиографию
 	filecolor=\filecolor,      % на файлы
 	urlcolor=\urlcolor,      % на URL
+    linkbordercolor=\linkcolor,  % hyperlink border will be red 
+    pdftitle={Yoga Veera Kit},
+    pdfpagemode=FullScreen,
 }
+
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\underline{#2}}}
+
 \usepackage{memhfixc}   %
 
 
