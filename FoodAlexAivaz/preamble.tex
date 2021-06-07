@@ -337,7 +337,7 @@ pdfauthor={I am the Author} % author
 #8
 
 \ifthenelse{\equal{#9}{}}{}{%
-% \tikz[remember picture,overlay] \node[opacity=0.20,inner sep=0pt] at (page cs:0,-0.5){\includegraphics[height=0.5\paperwidth]{#8}};%
+\tikz[remember picture,overlay] \node[opacity=0.20,inner sep=0pt] at (page cs:0,-0.5){\includegraphics[height=0.5\paperwidth]{#9}};%
 } 
 }
 
