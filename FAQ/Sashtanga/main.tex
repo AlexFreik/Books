@@ -1,3 +1,5 @@
+%&-job-name=newfilenameialwayswanted
+\def\jobname{whatever}
 \documentclass[
 a4paper, % Stock and paper size.
 12pt, % Type size.
@@ -8,7 +10,6 @@ onecolumn, % Only one column of text on a page.
 % openleft, % Each chapter will start on a verso page.
 openany, % A chapter may start on either a recto or verso page.
 ]{memoir}
-
 %%% PACKAGES 
 %%%------------------------------------------------------------------------------
 
@@ -64,6 +65,9 @@ pdfauthor={I am the Author} % author
 	filecolor=\filecolor,      % на файлы
 	urlcolor=\urlcolor,      % на URL
 }
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\underline{#2}}}
+
 \usepackage{memhfixc}   %
 
 
