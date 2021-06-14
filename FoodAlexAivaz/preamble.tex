@@ -51,8 +51,8 @@
 %%% PAGE LAYOUT 
 %%%------------------------------------------------------------------------------
 
-\setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left and right margin
-\setulmarginsandblock{0.1\paperwidth}{*}{1}  % Upper and lower margin
+\setlrmarginsandblock{0.1\paperwidth}{*}{1} % Left and right margin
+\setulmarginsandblock{0.12\paperwidth}{*}{1}  % Upper and lower margin
 \checkandfixthelayout
 
 %%% SECTIONAL DIVISIONS
@@ -288,11 +288,23 @@ pdfauthor={I am the Author} % author
 % %{\vspace{-15pt} \hrulefill}{-13pt}    {\scshape\LARGE\bfseries}[\vspace{-25pt}]
 % \titlespacing*{name=\subsection,numberless}{0pt}{0pt}{-5pt}
 
+\usepackage[export]{adjustbox}
+\usepackage{zref-savepos}
+
+% \filltopageendgraphics[<options>]{<file>}
+\newcommand{\filltopageendgraphics}[2][]{%
+  \par
+  \zsaveposy{top-\thepage}% Mark (baseline of) top of image
+  \vfill
+  \zsaveposy{bottom-\thepage}% Mark (baseline of) bottom of image
+  \smash{\includegraphics[height=\dimexpr\zposy{top-\thepage}sp-\zposy{bottom-\thepage}sp\relax,#1]{#2}}%
+  \par
+}
 
 \newcommand{\recipe}[9][Специи]
 {%
 \newpage
-\subsection*{\emph{\huge #2}}
+{\centering \subsection*{\emph{\huge #2}}}
 \addcontentsline{toc}{subsection}{#2}
 %%% try to use just text, instead of sec, but sec is OK
 % \par
@@ -335,10 +347,11 @@ pdfauthor={I am the Author} % author
 #7
 }
 #8
-
 \ifthenelse{\equal{#9}{}}{}{%
-\tikz[remember picture,overlay] \node[opacity=0.20,inner sep=0pt] at (page cs:0,-0.5){\includegraphics[height=0.5\paperwidth]{#9}};%
-} 
+    {{\begin{center} \filltopageendgraphics[width=\textwidth,keepaspectratio]{#9}\end{center}}}
+}
+% \tikz[remember picture,overlay] \node[opacity=0.59,inner sep=0pt] at (page cs:0,-0.8){\maxsizebox{\textwidth}{0.2\pdfpageheight}{\adjincludegraphics[width=\textwidth,trim={0 0 0 {.05\pdfpageheight}},clip]{#9}}};%
+%\tikz[remember picture,overlay] \node[opacity=0.59,inner sep=0pt] at (page cs:0,-0.8){\filltopageendgraphics[width=.5\linewidth]{#9}};%
 }
 
 

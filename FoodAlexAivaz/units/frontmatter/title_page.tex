@@ -8,12 +8,43 @@
 \usepackage{graphicx}
 %% for dingbats
 \usepackage{pifont}
-\newlength{\drop}% for my convenience
 
+
+\providecommand{\HUGE}{\Huge}% if not using memoir
+\newlength{\drop}% for my convenience
+%% specify the Webomints family
+\newcommand*{\wb}[2]{\fontsize{#1}{#2}\usefont{U}{webo}{xl}{n}}
+%% select a (FontSite) font by its font family ID
+\newcommand*{\FSfont}[1]{\fontencoding{T1}\fontfamily{#1}\selectfont}
+%% if you don’t have the FontSite fonts either \renewcommand*{\FSfont}[1]{}
+%% or use your own choice of family.
+%% select a (TeX Font) font by its font family ID
+\newcommand*{\TXfont}[1]{\fontencoding{T1}\fontfamily{#1}\selectfont}
 %% Generic publisher’s logo
 \newcommand*{\plogo}{\fbox{$\mathcal{PL}$}}
-
-
+%% Some shades
+\definecolor{Dark}{gray}{0.2}
+\definecolor{MedDark}{gray}{0.4}
+\definecolor{Medium}{gray}{0.6}
+\definecolor{Light}{gray}{0.8}
+%%%% Additional font series macros
+\makeatletter
+%%%% light series
+%% e.g., kernel doc, section s: line 12 or thereabouts
+\DeclareRobustCommand\ltseries
+  {\not@math@alphabet\ltseries\relax
+   \fontseries\ltdefault\selectfont}
+%% e.g., kernel doc, section t: line 32 or thereabouts
+\newcommand{\ltdefault}{l}
+%% e.g., kernel doc, section v: line 19 or thereabouts
+\DeclareTextFontCommand{\textlt}{\ltseries}
+% heavy(bold) series
+\DeclareRobustCommand\hbseries
+  {\not@math@alphabet\hbseries\relax
+   \fontseries\hbdefault\selectfont}
+\newcommand{\hbdefault}{hb}
+\DeclareTextFontCommand{\texthb}{\hbseries}
+\makeatother
 
 
 
@@ -28,7 +59,7 @@
 
         веганству
 
-
+        
 \end{center}
 %\hspace*{0.3\textwidth}{\Huge\itshape \textit{Здоровое питание: советы }}\par
 %{\raggedleft\Huge\itshape простые рецепты\par}
@@ -36,4 +67,61 @@
 \hspace*{0.3\textwidth}{\includegraphics[width=0.1\linewidth]{img/isha_logo}}\\[0.5\baselineskip]
 \hspace*{0.3\textwidth}{\Large }
 \vspace*{\drop}
+\endgroup}
+
+\newcommand*{\titlePM}{\begingroup% \titleGM with Ornaments
+\drop = 0.1\textheight
+\vspace*{\baselineskip}
+\vfill
+  \hbox{%
+  \hspace*{0.1\textwidth}%
+  {\wb{18pt}{18pt}
+   \begin{picture}(0,0)
+     \multiput(0,0)(0,20){34}{\textcolor{Medium}{Q}}
+   \end{picture}
+  }
+%  \rule{1pt}{\textheight}
+  \hspace*{0.15\textwidth}%
+\parbox[b]{0.75\textwidth}{
+  \vbox{%
+    \vspace{\drop}
+    {\noindent\HUGE\bfseries \\[0.5\baselineskip]
+               Десерты}\\[2\baselineskip]
+    {\Large\itshape }\\[4\baselineskip]
+    {\Large }\par
+    \vspace{0.5\textheight}
+    {\noindent }\\[\baselineskip]
+    }}}% ends of vbox/parbox/hbox
+\vfill
+\null
+\endgroup}
+
+
+
+\newcommand*{\cdiam}{\prec\kern-2pt\succ}
+\newcommand*{\titleZD}{\begingroup% Zuleika Dobson
+\vspace*{2\baselineskip}
+\centering
+\begin{picture}(240,0)
+  \multiput(0,0)(24,0){10}{{\wb{10}{12}4}}
+  \multiput(-5,-21)(0,-24){15}{\rotatebox{90}{{\wb{10}{12}4}}}
+  \multiput(0,-360)(24,0){10}{{\wb{10}{12}4}}
+  \multiput(235,-21)(0,-24){15}{\rotatebox{90}{{\wb{10}{12}4}}}
+  \put(0,0){%
+    \begin{minipage}[t]{240pt}
+      \centering
+      \vspace*{2\baselineskip}
+      {\Huge Супы}\\
+      \vspace*{5\baselineskip}
+      $\cdiam$\\[0.25\baselineskip]
+      $\cdiam\cdiam\cdiam$\\[0.25\baselineskip]
+      $\cdiam\cdiam\cdiam\cdiam\cdiam$\\[0.25\baselineskip]
+      $\cdiam\cdiam\cdiam$\\[0.25\baselineskip]
+      $\cdiam$\par
+      \vspace*{5\baselineskip}
+      \vspace*{2\baselineskip}
+    \end{minipage}}
+\end{picture}
+\vfill
+\null
 \endgroup}

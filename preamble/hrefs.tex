@@ -1,0 +1,32 @@
+%%% INTERNAL HYPERLINKS
+%%%-------------------------------------------------------------------------------
+
+\usepackage{hyperref}   % Internal hyperlinks
+\hypersetup{
+pdfborder={0 0 0},      % No borders around internal hyperlinks
+pdfauthor={I am the Author} % author
+}
+% ----------- hyper ref -----------
+\usepackage{hyperref}
+
+
+\newcommand{\linkcolor}{blue}
+\newcommand{\citecolor}{blue}
+\newcommand{\filecolor}{magenta}
+\newcommand{\urlcolor}{NavyBlue}
+\hypersetup{				% Гиперссылки
+	unicode=true,           % русские буквы в раздела PDF\\
+	pdfstartview=FitH,
+	colorlinks=true,  % false: ссылки в рамках; true: цветные ссылки
+	linkcolor=\linkcolor,         % внутренние ссылки
+	citecolor=\citecolor,        % на библиографию
+	filecolor=\filecolor,      % на файлы
+	urlcolor=\urlcolor,      % на URL
+    linkbordercolor=\linkcolor,  % hyperlink border will be red 
+    pdftitle={Yoga Veera Kit},
+    pdfpagemode=FullScreen,
+}
+
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\underline{#2}}}
+
