@@ -45,6 +45,8 @@
 \newcommand{\hbdefault}{hb}
 \DeclareTextFontCommand{\texthb}{\hbseries}
 \makeatother
+\usetikzlibrary{chains}
+\usepackage{pgfornament}
 
 \usepackage{blindtext}
 
@@ -107,22 +109,47 @@ asdfas}
 \endgroup}
 
 
-
 \newcommand*{\cdiam}{\prec\kern-2pt\succ}
 \newcommand*{\titleZD}{\begingroup% Zuleika Dobson
 \vspace*{2\baselineskip}
 \centering
-\begin{picture}(240,0)
+\begin{picture}(0,0)
   % \multiput(-100,40)(60,0){19}{{\wb{10}{12}afghb}}
-  \multiput(-082,40)(48,0){9}{{\wb{10}{12}fghg}}
-  \multiput(-094,40)(48,0){1}{{\wb{10}{12}a}}
-  \multiput(-105,040)(0,-60){1}{{\wb{10}{12}5}}
-  \multiput(-105,038)(0,-48){1}{\rotatebox{270}{{\wb{10}{12}a}}}
-  \multiput(-105,-22)(0,-48){14}{\rotatebox{90}{{\wb{10}{12}fghg}}}
+  \multiput(-119,040)(0,-60){1}{{\wb{10}{12}5}}
+  \multiput(-0,0)(0,-60){1}{{\wb{1}{05}5}}
+  \multiput(-108,40)(48,0){1}{{\wb{10}{12}a}}
+  \multiput(-096,40)(48,0){9}{{\wb{10}{12}fghg}}
+  \multiput(0336,40)(48,0){1}{{\wb{10}{12}d}}
+  \multiput(0351,040)(0,-60){1}{{\wb{10}{12}5}}
+  \multiput(-119,038)(0,-48){1}{\rotatebox{270}{{\wb{10}{12}a}}}
+  \multiput(-119,-22)(0,-48){14}{\rotatebox{90}{{\wb{10}{12}fghg}}}
   \multiput(-100,-633)(24,0){19}{{\wb{10}{12}4}}
   \multiput(351,19)(0,-24){14}{\rotatebox{270}{{\wb{10}{12}fghg}}}
-  \put(0,0){%
-    \begin{minipage}[t]{240pt}
+\end{picture}
+
+\newcommand{\xNum}{07}
+\newcommand{\yNum}{12}
+\newcommand{\shift}{5mm}
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm]
+    \node (nworn) [shift={(\shift,-\shift)}, anchor=north west, on chain ] at (current page.north west){\pgfornament[width=\shift]{61}};
+    \foreach \i in {1,...,\xNum}
+      {\node [on chain] {{\wb{10}{12}fghg}};}
+    \node (neorn) [on chain] {\pgfornament[width=\shift]{63}};
+    \foreach \i in {1,...,12}
+      {\node [continue chain=going below, on chain] {\pgfornament[width=\shift,symmetry=h]{62}};
+      \node [continue chain=going below, on chain] {\pgfornament[width=\shift]{62}};}
+    \node (seorn) [on chain] {\pgfornament[width=\shift,symmetry=h]{62}};
+    \foreach \i in {1,...,\xNum}
+      {\node [continue chain=going left, on chain] {\pgfornament[width=\shift,symmetry=h]{61}};
+      \node [continue chain=going left, on chain] {\pgfornament[width=\shift,symmetry=h]{62}};}
+    \node (sworn) [on chain] {\pgfornament[width=\shift,symmetry=h]{61}};
+    \foreach \i in {1,...,12}
+      {\node [continue chain=going above, on chain] {\pgfornament[width=\shift]{61}};
+      \node [continue chain=going above, on chain] {\pgfornament[width=\shift,symmetry=h]{61}};}
+\end{tikzpicture}
+
+%\blindtext
+    \begin{minipage}[t]{0.7\textwidth}
       \centering
       \vspace*{2\baselineskip}
       {\Huge Супы}\\
@@ -135,9 +162,9 @@ asdfas}
       \vspace*{5\baselineskip}
       \vspace*{2\baselineskip}
       \blindtext
-    \end{minipage}}
-\end{picture}
-%\blindtext
+    \end{minipage}
 \vfill
 \null
+\thispagestyle{empty}
+\clearpage
 \endgroup}
