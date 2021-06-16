@@ -108,51 +108,49 @@ asdfas}
 \null
 \endgroup}
 
+\newcommand{\xNum}{09}
+\newcommand{\yNum}{14}
+\newcommand{\shiftMint}{20}
+\newcommand{\shift}{20pt}
+\newcommand{\chainSkip}{~~~~}
+\newcommand{\cornerColor}{\color{Dark}}
 
 \newcommand*{\cdiam}{\prec\kern-2pt\succ}
-\newcommand*{\titleZD}{\begingroup% Zuleika Dobson
+\newcommand{\titleZD}[2]{\begingroup% Zuleika Dobson
 \vspace*{2\baselineskip}
 \centering
-\begin{picture}(0,0)
-  % \multiput(-100,40)(60,0){19}{{\wb{10}{12}afghb}}
-  \multiput(-119,040)(0,-60){1}{{\wb{10}{12}5}}
-  \multiput(-0,0)(0,-60){1}{{\wb{1}{05}5}}
-  \multiput(-108,40)(48,0){1}{{\wb{10}{12}a}}
-  \multiput(-096,40)(48,0){9}{{\wb{10}{12}fghg}}
-  \multiput(0336,40)(48,0){1}{{\wb{10}{12}d}}
-  \multiput(0351,040)(0,-60){1}{{\wb{10}{12}5}}
-  \multiput(-119,038)(0,-48){1}{\rotatebox{270}{{\wb{10}{12}a}}}
-  \multiput(-119,-22)(0,-48){14}{\rotatebox{90}{{\wb{10}{12}fghg}}}
-  \multiput(-100,-633)(24,0){19}{{\wb{10}{12}4}}
-  \multiput(351,19)(0,-24){14}{\rotatebox{270}{{\wb{10}{12}fghg}}}
-\end{picture}
-
-\newcommand{\xNum}{07}
-\newcommand{\yNum}{12}
-\newcommand{\shift}{5mm}
-\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm]
-    \node (nworn) [shift={(\shift,-\shift)}, anchor=north west, on chain ] at (current page.north west){\pgfornament[width=\shift]{61}};
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-0.29\shiftMint]\color{Medium}
+%%% top 
+    \node (nworn) [shift={(\shift,-\shift)}, anchor=north west, on chain ] at (current page.north west){{\cornerColor\wb{\shiftMint}{12}5}};
+    \node [on chain] {\chainSkip{\wb{\shiftMint}{02}a}};
     \foreach \i in {1,...,\xNum}
-      {\node [on chain] {{\wb{10}{12}fghg}};}
-    \node (neorn) [on chain] {\pgfornament[width=\shift]{63}};
-    \foreach \i in {1,...,12}
-      {\node [continue chain=going below, on chain] {\pgfornament[width=\shift,symmetry=h]{62}};
-      \node [continue chain=going below, on chain] {\pgfornament[width=\shift]{62}};}
-    \node (seorn) [on chain] {\pgfornament[width=\shift,symmetry=h]{62}};
+      {\node [on chain] {{\wb{\shiftMint}{02}fg}};}
+    \node [on chain] {{\wb{\shiftMint}{02}d}\chainSkip};
+    \node (neorn) [on chain] {{\cornerColor\wb{\shiftMint}{12}5}};
+%%% right
+    \node [continue chain=going below, on chain] {\rotatebox{090}{{\wb{\shiftMint}{02}d}\chainSkip}};
+    \foreach \i in {1,...,\yNum}
+    {\node [continue chain=going below, on chain] {\rotatebox{090}{{\wb{\shiftMint}{12}fg}}};}
+    \node [continue chain=going below, on chain] {\rotatebox{090}{\chainSkip{\wb{\shiftMint}{02}a}}};
+    \node (seorn) [on chain] {{\cornerColor\wb{\shiftMint}{12}5}};
+%%% bottom
+    \node [continue chain=going left, on chain]  {\rotatebox{180}{\chainSkip{\wb{\shiftMint}{02}a}}};
     \foreach \i in {1,...,\xNum}
-      {\node [continue chain=going left, on chain] {\pgfornament[width=\shift,symmetry=h]{61}};
-      \node [continue chain=going left, on chain] {\pgfornament[width=\shift,symmetry=h]{62}};}
-    \node (sworn) [on chain] {\pgfornament[width=\shift,symmetry=h]{61}};
-    \foreach \i in {1,...,12}
-      {\node [continue chain=going above, on chain] {\pgfornament[width=\shift]{61}};
-      \node [continue chain=going above, on chain] {\pgfornament[width=\shift,symmetry=h]{61}};}
+      {\node [continue chain=going left, on chain] {\rotatebox{180}{{\wb{\shiftMint}{12}fg}}};}
+    \node [continue chain=going left, on chain] {\rotatebox{180}{{\wb{\shiftMint}{02}d}\chainSkip}};
+    \node (sworn) [on chain] {{\cornerColor\wb{\shiftMint}{12}5}};
+%%% left
+    \node [continue chain=going above, on chain]  {\rotatebox{270}{{\wb{\shiftMint}{02}d}\chainSkip}};
+    \foreach \i in {1,...,\yNum}
+      {\node [continue chain=going above, on chain] {\rotatebox{270}{{\wb{\shiftMint}{12}fg}}};}
+    \node [continue chain=going above, on chain]  {\rotatebox{270}{\chainSkip{\wb{\shiftMint}{02}a}}};
 \end{tikzpicture}
 
 %\blindtext
     \begin{minipage}[t]{0.7\textwidth}
-      \centering
+      \begin{center}
       \vspace*{2\baselineskip}
-      {\Huge Супы}\\
+      {\Huge \textbf{#1}}\\
       \vspace*{5\baselineskip}
       $\cdiam$\\[0.25\baselineskip]
       $\cdiam\cdiam\cdiam$\\[0.25\baselineskip]
@@ -161,10 +159,33 @@ asdfas}
       $\cdiam$\par
       \vspace*{5\baselineskip}
       \vspace*{2\baselineskip}
-      \blindtext
+      \end{center}
+      #2
     \end{minipage}
 \vfill
 \null
 \thispagestyle{empty}
 \clearpage
 \endgroup}
+
+\newcommand{\foodTitle}[2]{%
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{#1}
+\titleZD{#1}{#2}}
+
+
+% \makeatletter
+% \AddToShipoutPicture{%
+% \begingroup
+% \setlength{\@tempdima}{2mm}% 
+% \setlength{\@tempdimb}{\paperwidth-\@tempdima-1cm}% 
+% \setlength{\@tempdimc}{\paperheight-\@tempdima}% 
+% \put(\LenToUnit{\@tempdima},\LenToUnit{\@tempdimc}){%
+%          \pgfornament[color=Medium,anchor=north west,width=1cm]{39}} \put(\LenToUnit{\@tempdima},\LenToUnit{\@tempdima}){%
+% \pgfornament[color=Maroon,anchor=south west,width=1cm,symmetry=h]{39}} \put(\LenToUnit{\@tempdimb},\LenToUnit{\@tempdimc}){%
+% \pgfornament[color=MedDark,anchor=north east,width=1cm,symmetry=v]{39}} \put(\LenToUnit{\@tempdimb},\LenToUnit{\@tempdima}){%
+%   \pgfornament[color=Light,anchor=south east,width=1cm,symmetry=c]{39}}
+% \endgroup
+% }
+% \makeatother
