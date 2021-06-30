@@ -1,4 +1,4 @@
-\documentclass[xcolor={usenames,dvipsnames,svgnames,table,rgb}]{beamer}
+\documentclass[handout,xcolor={usenames,dvipsnames,svgnames,table,rgb}]{beamer}
 
 \input{../../preamble/graphics.tex}
 \usepackage{hyperref}   % Internal hyperlinks
@@ -24,19 +24,23 @@
   \setbeamertemplate{section in toc}[sections numbered]
   \tableofcontents[hideallsubsections]
 \tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.5,-0.10){\includegraphics[width=0.5\paperwidth,height=0.9\paperwidth,keepaspectratio]{plan}};
-
 \end{frame}
 
-  \section{Профессиональная помощь. Нужна ли?}
+\section{Профессиональная помощь. Нужна ли?}
+\begin{frame}{Нужно ли оно?}
 
-  \begin{frame}{Нужно ли оно?}
-    \textbf{Минусы:}
-    \begin{itemize}[<+- | alert@+>]
+\begin{minipage}{.40\textwidth}
+\textbf{Минусы:}
+\begin{itemize}[<+- | alert@+>]
 \item Соит денег.
 \item Можно немного выпасть из процесса.
-
-\tikz[remember picture,overlay] \node[opacity=0.59,inner sep=0pt] at (page cs:0.5,+0.20){\includegraphics[width=0.5\paperwidth,height=0.9\paperwidth,keepaspectratio]{needed}};
 \end{itemize}
+\end{minipage}
+\begin{minipage}{.55\textwidth}
+      \centering
+     \includegraphics[width=0.95\textwidth]{needed}
+\end{minipage}
+
 
 \textbf{Плюсы:}
 \begin{itemize}[<+- | alert@+>]
@@ -54,32 +58,12 @@
         \href{https://www.ieltsjacky.com}{ieltsjacky.com}
     \item TOEFL --- удовольствие на 3ч.
     \end{enumerate}
-\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.0,-0.50){\includegraphics[width=0.5\paperwidth,height=0.5\paperwidth,keepaspectratio]{english}};
+\begin{center}
+\includegraphics[width=0.6\paperwidth,height=0.5\paperwidth,keepaspectratio]{english}
+\end{center}
 \end{frame}
 
-\section{Про страны}
-\begin{frame}{Четыре пути}
-\begin{itemize}[<+- | alert@+>]
-\item США --- дорого и сложнее поступить.
-\item Канада --- не узнавал.
-\item Австралия --- не привлекает (лично меня).
-\item  Индия --- не узнавал, но, вероятно, будет дешевле всего.
-\item \textbf{Европа} --- о ней сейчас и поговорим \faSmileO.
-\end{itemize}
-\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.0,-0.70){\includegraphics[width=0.5\paperwidth,height=0.3\paperwidth,keepaspectratio]{path}};
-\end{frame}
-
-\begin{frame}{Европа, деньги, три ствола}
-    \emph{Reminder: Говорю про страны, где были BSc в программировании.}
-\begin{itemize}[<+- | alert@+>]
-\item Ирландия,
-\item Германия,
-\item Швеция,
-\item \textbf{Нидерланды}.
-\end{itemize}
-\end{frame}
-
-\section{Про CV и Мотивчашку}
+\section{CV и Мотивашка}
 
 \begin{frame}{Curriculum Vitae}
     \textbf{Основные ошибки:}
@@ -118,13 +102,51 @@
 \tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.0,-0.10){\includegraphics[width=0.5\paperwidth]{MotivationLetterTemplate}};
 \end{frame}
 
+
+\section{Страны}
+\begin{frame}{Четыре пути}
+\begin{itemize}[<+- | alert@+>]
+\item США --- дорого и сложнее поступить.
+\item Канада --- не узнавал.
+\item Австралия --- не привлекает (лично меня).
+\item  Индия --- не узнавал, но, вероятно, будет дешевле всего.
+\item \textbf{Европа} --- о ней сейчас и поговорим \faSmileO.
+\end{itemize}
+%\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.0,-0.70){\includegraphics[width=0.5\paperwidth,height=0.3\paperwidth,keepaspectratio]{path}};
+\begin{center}
+\includegraphics[width=0.6\paperwidth,height=0.5\paperwidth,keepaspectratio]{path}
+\end{center}
+\end{frame}
+
+\begin{frame}{Европа, деньги, три ствола}
+    \emph{Reminder: Говорю про страны, где были BSc в программировании.}
+\begin{itemize}[<+- | alert@+>]
+\item Ирландия \texteuro $\approx 20k$, 
+\item Германия \texteuro $\approx 3k$,
+\item Швеция \texteuro $\approx 12k$,
+\item \textbf{Нидерланды} $\approx 12k$.
+\end{itemize}
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.5,-0.30){\includegraphics[width=0.6\paperwidth,height=0.5\paperwidth,keepaspectratio]{300bucks}};
+
+\end{frame}
+
+\begin{frame}{Стипендии в Нидерландах}
+    \begin{itemize}[<+- | alert@+>]
+    \item \href{https://www.studyinholland.nl/dutch-education/studies}{grant finder} from the university studyinholland.nl
+    \item \href{https://www.studyinholland.nl/finances}{more information} on finance when studying in the Netherlands
+    \item \href{https://www.studyinholland.nl/neso-russia}{Russia-specific information}
+\end{itemize}
+\end{frame}
 \section{ЧБД}
 \begin{frame}{Экзамены}
 \begin{enumerate}[<+- | alert@+>]
 \item TU Delft
 \item Groningen
 \end{enumerate}
-\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:+0.50,-0.10){\includegraphics[width=0.5\paperwidth]{exam}};
+
+\begin{center}
+\includegraphics[width=0.6\paperwidth,height=0.9\paperwidth,keepaspectratio]{exam}
+\end{center}
 \end{frame}
 
 \begin{frame}{Результаты}
@@ -135,6 +157,10 @@
 \end{frame}
 
 \begin{frame}{Выбор}
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.5\textwidth]{choose}
+\end{wrapfigure} 
     \textbf{Где собирать информацию.}
 \begin{itemize}[<+- | alert@+>]
 \item Почитать отзывы про вуз на разных сайтах.
@@ -146,12 +172,15 @@
 \item Отывы на Quora.
 \item Узнать про страны / города.
 \end{itemize}
-\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:+0.00,-0.70){\includegraphics[width=0.4\paperwidth]{choose}};
-\begin{wrapfigure}{l}{0.25\textwidth}
-    \centering
-    \includegraphics[width=0.5\textwidth]{choose}
-\end{wrapfigure} 
+%\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:+0.00,-0.70){\includegraphics[width=0.4\paperwidth]{choose}};
+\end{frame}
+
+\begin{frame}{Что еще посмотреть}
+    \begin{enumerate}
+\item \href{https://medium.com/там-где-мы-есть/как-поступить-в-вуз-в-голландии-разбираем-на-конкретном-примере-часть-1-e4b875080533}{Классная серия статей по поступлению в Нидерланды.}
+\item \href{https://www.coursera.org/learn/grammar-punctuation}{Coursera: Grammar and Punctuation} 
+    \item \href{https://www.coursera.org/learn/tricky-american-english-pronunciation}{Coursera: Tricky American English Pronunciation}
+ \end{enumerate}
 \end{frame}
 \end{document}
-
 
