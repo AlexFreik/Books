@@ -1,4 +1,9 @@
-\documentclass{beamer}
+\documentclass[xcolor={usenames,dvipsnames,svgnames,table,rgb}]{beamer}
+
+\input{../../preamble/graphics.tex}
+\usepackage{hyperref}   % Internal hyperlinks
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\color{NavyBlue}\underline{#2}}}
 
 \input{../../preamble/rusBabel.tex}
 %%% for beautiful icons
@@ -6,44 +11,147 @@
 
 \usetheme[progressbar=frametitle,
           numbering=fraction]{metropolis}           % Use metropolis theme
-\title{A minimal example}
+\title{Поступление заграницу}
 \date{\today}
-\author{Matthias Vogelgesang}
-\institute{Centre for Modern Beamer Themes}
+\author{Александр Фреик}
+\institute{}
 
 
 
 \begin{document}
   \maketitle
-  \begin{frame}{Программа}
+  \begin{frame}{Что нас ждет}
   \setbeamertemplate{section in toc}[sections numbered]
   \tableofcontents[hideallsubsections]
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.5,-0.10){\includegraphics[width=0.5\paperwidth,height=0.9\paperwidth,keepaspectratio]{plan}};
+
 \end{frame}
 
-  \section{Название}
+  \section{Профессиональная помощь. Нужна ли?}
+
   \begin{frame}{Нужно ли оно?}
     \textbf{Минусы:}
-    \begin{itemize}
-\item Придется потратить немного \faSmileO\ времени.
-\item Возмножно, немного \faSmileO\ денег.
-    \end{itemize}
+    \begin{itemize}[<+- | alert@+>]
+\item Соит денег.
+\item Можно немного выпасть из процесса.
 
-      \textbf{Плюсы:}
-    \begin{itemize}
-        \item Интересно (другая страна с другой культурой).
-        \item И другое.
-    \end{itemize}
-  \end{frame}
+\tikz[remember picture,overlay] \node[opacity=0.59,inner sep=0pt] at (page cs:0.5,+0.20){\includegraphics[width=0.5\paperwidth,height=0.9\paperwidth,keepaspectratio]{needed}};
+\end{itemize}
 
-  \begin{frame}{С чего начать}
+\textbf{Плюсы:}
+\begin{itemize}[<+- | alert@+>]
+        \item Сильно экономит время.
+        \item Профф помощь. Возможно, результат будет лучше.
+        \item Помощь с документами вроде CV и мотивационного письма.
+\end{itemize}
+\end{frame}
+
+\section{Английский, как и что учить}
+\begin{frame}{Есть 2 типа людей}
     \begin{enumerate}
-    \item  Оценить бюджет.
-    \item Оценить свое время.
+    \item  IELTS --- удовольствие на 2ч 45мин.
 
+        \href{https://www.ieltsjacky.com}{ieltsjacky.com}
+    \item TOEFL --- удовольствие на 3ч.
     \end{enumerate}
-  \end{frame}
-  \begin{frame}{First Frame}
-    Hello, world!
-  \end{frame}
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.0,-0.50){\includegraphics[width=0.5\paperwidth,height=0.5\paperwidth,keepaspectratio]{english}};
+\end{frame}
+
+\section{Про страны}
+\begin{frame}{Четыре пути}
+\begin{itemize}[<+- | alert@+>]
+\item США --- дорого и сложнее поступить.
+\item Канада --- не узнавал.
+\item Австралия --- не привлекает (лично меня).
+\item  Индия --- не узнавал, но, вероятно, будет дешевле всего.
+\item \textbf{Европа} --- о ней сейчас и поговорим \faSmileO.
+\end{itemize}
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.0,-0.70){\includegraphics[width=0.5\paperwidth,height=0.3\paperwidth,keepaspectratio]{path}};
+\end{frame}
+
+\begin{frame}{Европа, деньги, три ствола}
+    \emph{Reminder: Говорю про страны, где были BSc в программировании.}
+\begin{itemize}[<+- | alert@+>]
+\item Ирландия,
+\item Германия,
+\item Швеция,
+\item \textbf{Нидерланды}.
+\end{itemize}
+\end{frame}
+
+\section{Про CV и Мотивчашку}
+
+\begin{frame}{Curriculum Vitae}
+    \textbf{Основные ошибки:}
+\begin{itemize}[<+- | alert@+>]
+\item ГрАмАтнАсть (Moskow);
+ \item  В топку Personal qualities;
+ \item  В топку Usual Day;
+ \item  В топку Life Phylosophy;
+ \item  В топку абзацы, поскольку они там где много текста, тут нет такого;
+ \item Не пишите I earned, I achieved, \ldots\   (\href{https://www.topcv.com/career-advice/should-i-write-my-cv-in-third-person}{статья про это});
+\item Сделайте нормальный ник на почте и Гитхабе, например SexyKitten.
+\end{itemize}
+\href{https://www.overleaf.com/read/vvzhpztmcqnt}{Мой CV на OverLeaf.}
+
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.50,+0.42){\includegraphics[width=0.4\paperwidth,height=0.9\paperwidth,keepaspectratio]{CV}};
+\end{frame}
+
+\begin{frame}{Для сравнения}
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:+0.5,-0.1){\includegraphics[width=0.5\paperwidth]{CVtemplate}};
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:-0.5,-0.17){\includegraphics[width=0.5\paperwidth]{CVold}};
+\end{frame}
+
+
+\begin{frame}{Motivation Letter}
+\begin{itemize}
+\item Почитайте гайдики, сам не спец)
+\end{itemize}
+\href{https://www.overleaf.com/read/vvzhpztmcqnt}{Моя мотивашка на OverLeaf.}
+\begin{center}
+\includegraphics[width=0.6\paperwidth,height=0.9\paperwidth,keepaspectratio]{motivation}
+\end{center}
+%\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.50,-0.45){\includegraphics[width=0.4\paperwidth,height=0.9\paperwidth,keepaspectratio]{motivation}};
+\end{frame}
+
+\begin{frame}{Для сравнения}
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:0.0,-0.10){\includegraphics[width=0.5\paperwidth]{MotivationLetterTemplate}};
+\end{frame}
+
+\section{ЧБД}
+\begin{frame}{Экзамены}
+\begin{enumerate}[<+- | alert@+>]
+\item TU Delft
+\item Groningen
+\end{enumerate}
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:+0.50,-0.10){\includegraphics[width=0.5\paperwidth]{exam}};
+\end{frame}
+
+\begin{frame}{Результаты}
+Результаты для TU Delft, Groningen и Швеции пришли в середине апреля, у Tilburg~--- в марте, и у Vrije~---  еще зимой.
+\begin{center}
+\includegraphics[width=0.6\paperwidth,height=0.9\paperwidth,keepaspectratio]{results}
+\end{center}
+\end{frame}
+
+\begin{frame}{Выбор}
+    \textbf{Где собирать информацию.}
+\begin{itemize}[<+- | alert@+>]
+\item Почитать отзывы про вуз на разных сайтах.
+    \begin{enumerate}
+    \item \href{https://www.mastersportal.com}{mastersportal.com}
+    \item \href{https://www.eduopinions.com}{eduopinions.com}
+    \item \href{https://www.iagora.com}{iagora.com}
+    \end{enumerate}
+\item Отывы на Quora.
+\item Узнать про страны / города.
+\end{itemize}
+\tikz[remember picture,overlay] \node[opacity=0.99,inner sep=0pt] at (page cs:+0.00,-0.70){\includegraphics[width=0.4\paperwidth]{choose}};
+\begin{wrapfigure}{l}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.5\textwidth]{choose}
+\end{wrapfigure} 
+\end{frame}
 \end{document}
+
 
