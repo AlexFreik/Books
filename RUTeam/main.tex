@@ -9,6 +9,7 @@ onecolumn, % Only one column of text on a page.
 % openleft, % Each chapter will start on a verso page.
 openany, % A chapter may start on either a recto or verso page.
 ]{memoir}
+\synctex=1
 \maxtocdepth{subsection}
 \setsecnumdepth{subsection}
 \counterwithout{section}{chapter}
@@ -44,13 +45,14 @@ openany, % A chapter may start on either a recto or verso page.
 \subsection{Создание аудио трека}
 Подробнее должен рассказать Эльдар.
 \subsection{Создание финального видео}
-Эльдар после создания аудио трека отмечает ответственног за этот этап в AirTable. В последнем можно будет найти ссылки на оригинальное видео (раздел <<URL ORIGINAL>>), дедлайн (<<GIVE TO EMEDIA BY>>) и аудио трек (<<MEDIA LINK>>). 
+\subsubsection{AirTable}
+Эльдар после создания аудио трека отмечает ответственного за этот этап в AirTable. В последнем можно будет найти ссылки на оригинальное видео (раздел <<URL ORIGINAL>>), дедлайн (<<GIVE TO EMEDIA BY>>) и аудио трек (<<MEDIA LINK>>). 
 
 Так же там будут два поля с названиями: <<TN TITLE>> и  <<TITLE>>. {\color{gray}Разница в том, что первое используется для tumbneils (это картинка, которая будет показываться у этого видео в ленте, TN как раз сокращение от tumbneil). В то же время, <<TITLE>> используется для названия видеоролика. }
 
 Монтажеру рекомендуется использовать <<TN TITLE>> при руссификации заставки, если это необходимо.
 
-После того как видео смонтированно, \hyperref[montageRules]{подробнее об монтаже тут}, нужно загрузить получившийся продукт на гугл диск по ссылке <<MEDIA LINK>>, после чего 
+После того как видео смонтированно, \hyperref[montageRules]{подробнее об монтаже тут}, нужно загрузить получившийся продукт на гугл диск по ссылке <<ARCHIVAL FOLDER>>, после чего 
 \begin{itemize}
     \item отметить ответственного за следующий этап (Александра Гринева) в поле <<COLLABORATORS>>, 
 \item в <<VIDEO STATUS>> отметить <<Video ready>>.
@@ -61,8 +63,10 @@ openany, % A chapter may start on either a recto or verso page.
 \subsection{\ldots}
 \ldots
 
+\newpage
 \section{Монтаж --- советы \& правила}\label{montageRules}
 \subsection{Правила}
+В правилах мы выделили наилучшие практики, которые позволяют выдерживать качество и созранять общий стиль.
 \begin{enumerate}
 \item Параметры экспорта:
     \begin{itemize}
@@ -72,24 +76,36 @@ openany, % A chapter may start on either a recto or verso page.
     \item разрешение --- $1920 \times 1080$;
     \end{itemize}
 
-    Важно отметить, что даже если видео было в качестве $240 \times 240$ (то есть, еще и в другом формате), то нужно делать разрешение $1280 \times 720$.
-\item Если в начале есть заставка <<Sadhguru. Yogi, mystic and visioner.>>, то ее нужно просто отрезать, она только занимает время, в новых видео ее больше нет. 
+    Даже если видео было в качестве $240 \times 240$ (то есть, еще и в другом формате), то нужно делать разрешение $1280 \times 720$.
 
-    Это же касается и других устаревших заставок, вроде <<Conversation with Mystic>>.
-\item Конечный слайд нужно заменять на русский. 
+    {\color{gray}Эти правила нужны чтобы YouTube не перекомпилировал видео, также видео высокого разрешения рекомендуются чаще.}
 
-    Так же в новых видео в самом конце есть надпись <<\textcopyright\ Sadhguru 2021>>, ее оставляем без изменений. {\color{red} add info}
+\item У широких видео дублируем его-же на бекграунд, растягивем до границ, и накладываем блюр.
 
- Часто используемые слайды без текста (и с переведенным текстом) можно найти на \href{https://drive.google.com/drive/folders/1moOa4wR201aplGnueFKTXclzGQBKhxzc?usp=sharing}{Google Drive}.
+	\begin{center} \includegraphics[width=0.5\textwidth]{tooWide} \end{center}
 
-\item У некоторых видео есть вставки с текстом (например, вопросов). В таких случаях, если текст не озвучивается, то время фрагмента с текстом нужно самостоятельно подстроить под русскую версию, так чтобы зритель успевал прочитать весть текст, не ставя на паузу (то есть удлинить или укоротить, если требуется).  
+\item Устаревшие заставки <<Sadhguru. Yogi, mystic and visioner.>> и <<Conversation with Mystic>> вырезаются. {\color{gray}Они только отнимает время.}
 
-\item В идеале, если английский текст заменятся русским, то нужно смонтировать так, чтобы его было совсесм не видно. Но в случаях, когда на видео присутствует сложная анимация, этим правилом можно пренебречь в угоду общей эстетики.
+\item Конечный слайд нужно заменять на \href{https://drive.google.com/file/d/11NbSgvq8LbxDcy-a2WY5OJTKUZKcZx88/view?usp=sharing}{русский}. 
 
-\item Любой сколько-нибудь сложный перевод, особенно если есть какие-то названия, лучше согласовать с отвественным человеком. Сейчас это~--- Юрий Кузмин.
-\item Есть два шрифта, которые нам официально рекомендовал дизайнерский отдел Иши: Merriweather для заголовков, крупного текста и Open Sans для субтитров.
+	Конечная надпись <<\textcopyright\ Sadhguru 2021>> не меняется.
 
-    Так же иногда используется Segoe Script (например, на слайдах перед началом практики, врде Саштанги), вы его сразу заметите).
+ Часто используемые слайды на 
+\href{https://drive.google.com/drive/folders/1O54z3DtKpl90ut0Aa8wYkEEP37e00zPY?usp=sharing}{Google Drive}.
+
+\item Вставки с текстом (например, вопросов). Если текст не озвучивается, то время фрагмента с текстом должно быть достаточным, чтобы вы могли неспеша прочитать его (возможно, придется удлиннить видео).
+
+\item Английский текст при переводе не должен быть виден. В случае сложной анимации, этим можно пренебречь в угоду общей эстетики.
+
+\item Любой сколько-нибудь сложный перевод, особенно если есть какие-то названия, нужно согласовать с отвественным человеком (Юрий Кузмин или Ксения Ошерова).
+
+	Перевод вопросов и т.д. обычно имеется у звукоря.
+
+\item Дизайнерский отдел Иши дал следующие шрифты: Merriweather для заголовков, крупного текста и Open Sans для субтитров. Используем их.
+
+    Иногда используется Segoe Script, вы его сразу заметите.
+
+ \includegraphics[width=0.3\textwidth]{segoeScript}
 
     Их можно скачать и установить из Google Fonts:
     \begin{itemize}
@@ -97,26 +113,53 @@ openany, % A chapter may start on either a recto or verso page.
         \item Open Sans \href{https://fonts.google.com/specimen/Open+Sans}{\small https://fonts.google.com/specimen/Open+Sans};
     \item Segoe Script \href{https://www.fonts.com/font/microsoft-corporation/segoe-script?QueryFontType=Web&src=GoogleWebFonts}{\small https://www.fonts.com/font/microsoft-corporation/segoe-script?QueryFontType=Web\&src=GoogleWebFonts}.
       \end{itemize}
+
+
+\item Переходы между фрагментами с разным фоном через Dip to Black, иначе через Dissolve.
+
+\item Текст без особого смысла, вроде "Darshan — Dec 2012
+   Isha Yoga Center" оставляем как есть, наше время ценнее =).
 \end{enumerate}
 
 \subsection{Советы}
 \begin{enumerate}
-\item В видео иногда будет текст, который не несет особого смысла, вроде небольшого в левом нижнем углу вида "Darshan — Dec 2012
-    Isha Yoga Center", его можно оставить как есть, ваше время ценнее =).
-
-\item Если видео более квадратное чем нужно (встречается у старых видео), то можно на бекграунд добавить это-же видео, растынув его до границ, и наложив блюр. Так по краям окажутся не просто черные полосы, а что-то более очаровательное. 
-
 
 \item Для пользователей MacOS самый простой вариант монтирующей системы~--- iMovie, но у нее есть три серьезных недостатка.
     \begin{itemize}
-    \item Самое неприятное --- то что нет возможности добавить текст поверх видео. То есть для того чтобы заменить текст на русский придется делать картинку в отдельном приложении, и потом эту картинку вставлять в видео поверх. Это довольно неприятно, так как замедляет процесс, не говоря о том, если придется исправлять текст, то нудно будет сделать все то же самое по второму кругу.
-    \item Можно использовать не более двух видео треков. Это сильно ограничивает в действиях, если нужен сколько-нибудь сложных монтаж, хотя обычно двух треков хватает.
+    \item Нет возможности добавить текст поверх видео. То есть, придется делать картинку с перевдодм в отдельном приложении и наклеивать поверх. Это нарушает поток, и геморно исправлять текст.
+    \item Можно использовать только два видео трека. Это ограничивает более сложных монтаж, хотя обычно двух хватает.
     \item Нет возможности почеловечески кастомизировать разрешение и формат видео. 
 \end{itemize}
-Поэтому совет~--- скачать более профессиональное приложение. В ашраме в основном используется Adobe Premiere Pro, насколько я слышал.
+Поэтому совет~--- скачать более профессиональное приложение. В ашраме в основном используется Adobe Premiere Pro, насколько я слышал. 
+
+Чтобы его спиратить, наберите в Youtube "Premiere Pro download MacOS free" и выберите видео с большим числом просмотров и положительными отзывами.
 \end{enumerate}
 
-\tikz[remember picture,overlay] \node[opacity=0.15,inner sep=0pt] at (current page.center){\includegraphics[width=0.2\paperwidth]{IshaLogo}};
 
+
+\subsection{Тренировочное видео}
+\href{https://www.youtube.com/watch?v=9sGJUR7stzc}{Оригинал.}
+\quad
+\href{https://drive.google.com/file/d/1Y6ECjMSvkaUFmNawIePfFvqS2ZnB3SPi/view?usp=sharing}{Аудио трек.}
+\quad
+\href{https://www.youtube.com/watch?v=Q3NYDF4JyTg}{Русскоязыное видео для сравнения.}
+
+Название видео: \textbf{Как прожить невероятную жизнь}
+	
+Перевод субтитра на 08:10: \textbf{Тайир на тамильском означает йогурт}
+
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+  \begin{center}
+    \includegraphics[width=0.28\textwidth]{thumbnail}
+  \end{center}
+\end{wrapfigure}
+PS: Справа~--- thumbnail. Его делает команда дизайнеров, не монтажер.
+
+Хотя, если интересно делать — напишите Юре.
+
+
+
+\tikz[remember picture,overlay] \node[opacity=0.15,inner sep=0pt] at (current page.center){\includegraphics[width=0.2\paperwidth]{IshaLogo}};
 \end{document}
 % https://www.youtube.com/watch?v=4UH7lzptFH8
