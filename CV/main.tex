@@ -1,0 +1,62 @@
+\input{etc/preamble}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vpsace etc to make ajustments.
+\begin{document}
+
+\input{components/head}
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.53}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\input{components/education}
+\input{components/most_proud}
+%\medskip
+\input{components/languages}
+
+
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+%\newpage
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\input{components/projects}
+\input{components/skills}
+
+
+\input{components/activities}
+
+
+\end{paracol}
+
+\end{document}
+
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
+
+%-------------------------------------------------------------------
+% \cvsection{My Life Philosophy}
+
+% \begin{quote}
+% ``It's best to do nothing if you're not enjoying yourself.''
+% \end{quote}
+
+%-------------------------------------------------------------------
