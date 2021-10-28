@@ -32,7 +32,7 @@ openany, % A chapter may start on either a recto or verso page.
 \setlength{\parskip}{0.5em}
 \begin{document}
 \begin{center}
-    \Huge \textbf{Русский гайд}
+    \Huge \textbf{RU Team Guide}
 \end{center}
 \tableofcontents
 
@@ -63,6 +63,82 @@ openany, % A chapter may start on either a recto or verso page.
 \subsection{\ldots}
 \ldots
 
+
+\newpage
+\section{Фильтрация спама от AitTable}
+\subsection{Gmail}
+\begin{enumerate}
+    \item Откройте любое \emph{нежелательное} письмо.
+	    \begin{center} 
+	        \includegraphics[width=0.9\textwidth]{AirTableSpam/gmail0} 
+	    \end{center}
+    \item Нажмите значек \textbf{"More"} и выберите 
+                \textbf{"Filter messages like these"}.
+	    \begin{center} 
+	        \includegraphics[width=0.5\textwidth]{AirTableSpam/gmail1} 
+	    \end{center}
+    \item В открывшемся окне настройте параметры, как показано ниже. 
+        Далее нажмите \textbf{"Create filter"}.
+        \begin{itemize}
+            \item From: \textbf{"noreply@airtable.com"}
+            \item Subject: \textbf{"New comment on "}
+        \end{itemize}
+
+	    \begin{center} 
+	        \includegraphics[width=0.9\textwidth]{AirTableSpam/gmail2} 
+	    \end{center}
+    \item Отметьте параметры \textbf{"Skip the Inbox (Archive it)"} и
+        \textbf{"Mark as read"}, как показано ниже. 
+        \begin{itemize}
+            \item Далее все письма от \textbf{"noreply@airtable.com"}, 
+                предмет которых которых содержит "New comment on "
+                будут автоматически помечаться прочитанными и 
+                перемещаться в папку \textbf{"Archive"}.
+            \item Если отметить калочкой \textbf{"Also apply filter to ..."},
+                то фильтр применится и к \emph{нежелательным} письмам, 
+                которые уже пришли.
+        \end{itemize}
+
+	    \begin{center} 
+	        \includegraphics[width=0.7\textwidth]{AirTableSpam/gmail3} 
+	    \end{center}
+\end{enumerate}
+
+
+\newpage
+\subsection{Yandex mail}
+\begin{enumerate}
+    \item Откройте любое \emph{нежелательное} письмо.
+	    \begin{center} 
+	        \includegraphics[width=0.9\textwidth]{AirTableSpam/ya0} 
+	    \end{center}
+    \item Нажмите значек \textbf{"More"} и выберите 
+                \textbf{"Create filter"}.
+	    \begin{center} 
+	        \includegraphics[width=0.5\textwidth]{AirTableSpam/ya1} 
+	    \end{center}
+    \item В открывшемся окне настройте параметры, как показано ниже. 
+        Далее нажмите \textbf{"Create filter"}.
+        \begin{itemize}
+            \item Не забудьте поменять \textbf{matches} на 
+                \textbf{contains} в условии 
+                фильтра по предмету письма и заменить текст на 
+                \textbf{"New comment on "}.
+            \item Если отметить калочкой \textbf{"Apply to existing messages"},
+                то фильтр применится и к нежелательным письмам, которые 
+                уже пришли.
+            \item Далее все письма от \textbf{"noreply@airtable.com"}, предмет
+                которых которых содержит \textbf{"New comment on "} 
+                будут автоматически помечаться прочитанными 
+                и перемещаться в папку \textbf{"Archive"}.
+        \end{itemize}
+
+	    \begin{center} 
+	        \includegraphics[width=0.9\textwidth]{AirTableSpam/ya2} 
+	    \end{center}
+
+\end{enumerate}
+
 \newpage
 \section{Монтаж --- советы \& правила}\label{montageRules}
 \subsection{Правила}
@@ -76,9 +152,15 @@ openany, % A chapter may start on either a recto or verso page.
     \item разрешение --- $1920 \times 1080$;
     \end{itemize}
 
-    Даже если видео было в качестве $240 \times 240$ (то есть, еще и в другом формате), то нужно делать разрешение $1280 \times 720$.
+    Если разрешение оригинала $1280 \times 720$,
+        то фиальное видео делаем в формате
+    $1920 \times 1080$ {\color{gray}(рекомендательные алгоритмы 
+        YouTube поощряют 
+    высокоформатные видео)}. 
 
-    {\color{gray}Эти правила нужны чтобы YouTube не перекомпилировал видео, также видео высокого разрешения рекомендуются чаще.}
+    Но, если качесво $480$\ или ниже --- то оставляем 
+    качесво оригинала {\color{gray}(растягивать $480$ до $1080$ уже перебор)}.
+
 
 \item У широких видео дублируем его-же на бекграунд, растягивем до границ, и накладываем блюр.
 
@@ -155,7 +237,7 @@ openany, % A chapter may start on either a recto or verso page.
 
 
 
-\subsection{Тренировочное видео}
+\subsection{Test Task (Тренировочное видео}
 \href{https://www.youtube.com/watch?v=9sGJUR7stzc}{Оригинал.}
 \quad
 \href{https://drive.google.com/file/d/1Y6ECjMSvkaUFmNawIePfFvqS2ZnB3SPi/view?usp=sharing}{Аудио трек.}
@@ -173,8 +255,7 @@ openany, % A chapter may start on either a recto or verso page.
   \end{center}
 \end{wrapfigure}
 PS: Справа~--- thumbnail. Его делает команда дизайнеров, не монтажер.
-
-Хотя, если интересно делать — напишите Юре.
+Хотя, если интересно — напишите Александру.
 
 
 
