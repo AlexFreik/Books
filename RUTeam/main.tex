@@ -30,6 +30,10 @@ openany, % A chapter may start on either a recto or verso page.
 %%% indenting
 \setlength{\parindent}{0em}
 \setlength{\parskip}{0.5em}
+
+\setsecnumdepth{subsection}
+\maxtocdepth{subsection}
+
 \begin{document}
 \begin{center}
     \Huge \textbf{Montage Guide RU}
@@ -40,8 +44,8 @@ openany, % A chapter may start on either a recto or verso page.
 
 \subsection*{Предисловие}
 
-
-Ссылка на Google Drive с файлами для монтажа: \href{https://ishaeu.org/RUMontage}{https://ishaeu.org/RUMontage}
+Ссылка на Google Drive с файлами для монтажа: 
+\href{https://ishaeu.org/RUMontage}{https://ishaeu.org/RUMontage}
 
 Рекомендуем читать документ напрямую на Google Drive (сслыка
 выше), либо совсем недавно скачанную версию,
@@ -49,32 +53,35 @@ openany, % A chapter may start on either a recto or verso page.
 
 
 \newpage
-\section{Монтаж}\label{montageRules}
-\subsection{Правила для YouTube}
+\section{Правила для YouTube}\label{montageRules}
 В правилах мы выделили наилучшие практики, которые позволяют выдерживать качество и сохранять общий стиль.
-\begin{enumerate}
-\item Параметры экспорта:
-    \begin{itemize}
-        \item \textbf{кодек --- H264};
-        \item \textbf{битрейт видео~--- 10mbps};
 
-        Если ваш интернет не позволяет 10mbps можно взять битрейт чуть выше, чем в 
-        оригинальном видео (обычно где-то 2-3 mbps).
+\subsection{Параметры экспорта}
+\begin{itemize}
+    \item \textbf{формат --- .mp4};
+    \item \textbf{кодек --- H264};
+    \item \textbf{битрейт видео~--- 10mbps};
 
-        \item \textbf{битрейт аудио --- 320};
-        \item \textbf{разрешение --- $1920 \times 1080$};
-       
-        Если разрешение оригинала $1280 \times 720$,
-            то фиальное видео делаем в формате
-        $1920 \times 1080$ {\color{gray}(рекомендательные алгоритмы 
-            YouTube поощряют 
-        высокоформатные видео)}. 
+    Если ваш интернет не позволяет 10mbps можно взять битрейт чуть выше, чем в 
+    оригинальном видео (обычно где-то 2-3 mbps).
 
-        Но, если качесво $480$\ или ниже --- то оставляем 
-        качесво оригинала {\color{gray}(растягивать $480$ до $1080$ уже перебор)}.
-    \end{itemize}
+    \item \textbf{битрейт аудио --- 320};
+    \item \textbf{разрешение --- $1920 \times 1080$};
+   
+    Если разрешение оригинала $1280 \times 720$,
+        то фиальное видео делаем в формате
+    $1920 \times 1080$ {\color{gray}(рекомендательные алгоритмы 
+        YouTube поощряют 
+    высокоформатные видео)}. 
+
+    Но, если качесво $480$\ или ниже --- то оставляем 
+    качесво оригинала {\color{gray}(растягивать $480$ до $1080$ уже перебор)}.
+\end{itemize}
 
 
+\subsection{Старые видео}
+
+\begin{itemize}
 
 \item У квадратных видео дублируем его-же на бекграунд, растягивем до границ, и накладываем блюр.
 
@@ -83,13 +90,70 @@ openany, % A chapter may start on either a recto or verso page.
 \item Устаревшие заставки <<Sadhguru. Yogi, mystic and visioner.>> и <<Conversation with Mystic>> вырезаются. 
 
     {\color{gray}Причина: они не несут особой пользы и отнмают время.}
+\end{itemize}
 
-\item Конечный слайд нужно заменять на \href{https://drive.google.com/file/d/11NbSgvq8LbxDcy-a2WY5OJTKUZKcZx88/view?usp=sharing}{русский}. 
+\subsection{Заставка в конце}
+
+\begin{itemize}
+    \item Конечный слайд нужно заменять на \href{https://drive.google.com/file/d/11NbSgvq8LbxDcy-a2WY5OJTKUZKcZx88/view?usp=sharing}{русский}. 
 
 	Конечная надпись <<\textcopyright\ Sadhguru 2021>> не меняется.
 
- Часто используемые слайды на 
-\href{https://drive.google.com/drive/folders/1O54z3DtKpl90ut0Aa8wYkEEP37e00zPY?usp=sharing}{Google Drive}.
+    Часто используемые слайды / музыку можно найти на Google Drive в папке
+    useful\_files.
+\href{https://ishaeu.org/RUMontage}{https://ishaeu.org/RUMontage}
+\end{itemize}
+
+
+\subsection{Переходы}
+\begin{itemize}
+    \item Переходы между фрагментами с разным фоном через Dip to Black, иначе через Dissolve.
+\end{itemize}
+
+
+\subsection{Общие требования к тексту}
+\begin{itemize}
+\item Дизайнерский отдел Иши дал следующие шрифты: 
+    \textbf{Merriweather}~--- для заголовков и крупного текста, а 
+    \textbf{Open Sans}~--- для субтитров. Используем их.
+
+    Иногда используется \textbf{Segoe Script}, вы его сразу заметите, пример ниже.
+
+    \includegraphics[width=0.3\textwidth]{segoeScript}
+
+    Их можно скачать и установить из Google Fonts:
+    \begin{itemize}
+        \item  Merriweather \href{https://fonts.google.com/specimen/Merriweather}{\small https://fonts.google.com/specimen/Merriweather};
+        \item Open Sans \href{https://fonts.google.com/specimen/Open+Sans}{\small https://fonts.google.com/specimen/Open+Sans};
+    \item Segoe Script \href{https://www.fonts.com/font/microsoft-corporation/segoe-script?QueryFontType=Web&src=GoogleWebFonts}{\small https://www.fonts.com/font/microsoft-corporation/segoe-script?QueryFontType=Web\&src=GoogleWebFonts}.
+    \end{itemize}
+
+    \emph{P.S.} Устанавливать шрифты очень легко, 
+    ниже (стр. \pageref{fonts}) можно найти инструкцию для MacOS.
+
+\item Иногда приходится вставлять текст в видео. 
+
+    \textbf{Рекомендация Ашрама}: визуальные объекты не должны перекрывать 
+     Садхгуру. Если приходится~--- выбираем меньшее зло. Занимаем нижнюю часть, 
+     полностью оставляя лицо видимым.
+
+\item Любой сколько-нибудь сложный перевод, 
+    {\color{gray} если его уже не предоставили вместе с заданием},
+    особенно если есть какие-то названия, нужно согласовать 
+    с координатором проекта.
+
+\item Перевод / добавление субтитров. Визуальные эффекты выбираем по ситуации. 
+    Самое важное~--- чтобы выглядело аккуратно. Разнообразие и изощренность 
+    эффектов ~--- на втором месте. 
+
+    Подробнее об методах можно почитать в советах (стр. \pageref{advices}).  
+\end{itemize}
+
+
+
+\subsection{Перевод текста}
+
+\begin{itemize}
 
 \item Вставки с текстом (например, вопросов). Если текст не озвучивается, то время фрагмента с текстом должно быть достаточным, чтобы вы могли неспеша прочитать его (возможно, придется удлиннить видео).
 
@@ -99,71 +163,48 @@ openany, % A chapter may start on either a recto or verso page.
     и субтитры всегда можно включить.
 
     Но, в случае, когда это не субтитры, а слайд с вопросом~--- 
-    делать русский слайд нужно, даже если вопрос озвучивают.
+    переводить нужно, даже если вопрос озвучивают.
 \item Английский текст при переводе не должен быть виден. Для этого порой лучше
     накрывать переводом с запасом по времени слева и справа. То есть, резать
     не точно по началу и концу, а с отступами.
 
     В случае сложной анимации, этим можно пренебречь в угоду общей эстетики.
 
-\item Любой сколько-нибудь сложный перевод, {\color{gray} если его уже не предоставили вместе с заданием},
-    особенно если есть какие-то названия, нужно согласовать с координатором проекта.
-
-\item Дизайнерский отдел Иши дал следующие шрифты: Merriweather для заголовков, крупного текста и Open Sans для субтитров. Используем их.
-
-    Иногда используется Segoe Script, вы его сразу заметите.
-
- \includegraphics[width=0.3\textwidth]{segoeScript}
-
-    Их можно скачать и установить из Google Fonts:
-    \begin{itemize}
-        \item  Merriweather \href{https://fonts.google.com/specimen/Merriweather}{\small https://fonts.google.com/specimen/Merriweather};
-        \item Open Sans \href{https://fonts.google.com/specimen/Open+Sans}{\small https://fonts.google.com/specimen/Open+Sans};
-    \item Segoe Script \href{https://www.fonts.com/font/microsoft-corporation/segoe-script?QueryFontType=Web&src=GoogleWebFonts}{\small https://www.fonts.com/font/microsoft-corporation/segoe-script?QueryFontType=Web\&src=GoogleWebFonts}.
-      \end{itemize}
-
-      \emph{P.S.} Устанавливать шрифты очень легко, ниже (субсекция \ref{fonts}) можно
-      найти инструкцию для MacOS.
-
-
-\item Переходы между фрагментами с разным фоном через Dip to Black, иначе через Dissolve.
-
-
-\item Перевод / добавление субтитров. По ситуации~--- обычно блюр красивее непрозрачного фона, но иногда нет. 
 
 \item Титры о месте и дате видеозаписи, вроде "Darshan — Dec 2012
     Isha Yoga Center" и подобный несущественный текст оставляем без изменений.
 
     {\color{gray} Причины: они не стоят потраченного времени, плюс 
      субтитры с переводом уменьшают  общую красоту.}
- \item При добавлении болшого субтитра лучше разбить его на несколько, каждый
+
+ \item Когда Садхгуру читает поэму, и русской озвучки нет, при добавлении 
+     болшого субтитра с русским "вольным толкованием", лучше разбить его на 
+     несколько, каждый
      по $\approx 3$ строки и добавить их внизу по центру. 
 
-     \textbf{Note}: (Рекомендация Ашрама) Визуальные объекты не должны перекрывать 
-     Садхгуру. Если приходится~--- выбираем меньшее зло. Занимаем нижнюю часть, 
-     полностью оставляя лицо видимым.
-\end{enumerate}
+\end{itemize}
 
-\subsection{Советы}
-\begin{enumerate}
-\item \textbf{Основные методы перевода текста.}
 
-    \begin{itemize}
-        \item \emph{Наложить текст с непрозрачным бекграундом.} 
+\newpage
+\section{Советы}\label{advices}
+\subsection{Основные методы перевода текста.}
 
-            \begin{itemize}
-                \item Подходит для ситуации, когда фон в месте, где размещен текст
-            одноцветен, но обычно это не так, и лучше использовать другие методы.
-            \end{itemize}
+\begin{itemize}
+    \item \emph{Наложить текст с непрозрачным бекграундом.} 
 
-        \item \emph{Наложить gaussian blur на место где находится текст, и добавить
-            свой поверх.}
+        \begin{itemize}
+            \item Подходит для ситуации, когда фон в месте, где размещен текст
+        одноцветен, но обычно это не так, и лучше использовать другие методы.
+        \end{itemize}
 
-            \begin{itemize}
-                \item Универсальный способ, подходит для 
-            динамического бекграунда, и, обычно, смотрится неплохо.
+    \item \emph{Наложить gaussian blur на место где находится текст, и добавить
+        свой поверх.}
 
-                \item Ниже пример, где лучше было использовать блюр.
+        \begin{itemize}
+            \item Универсальный способ, подходит для 
+        динамического бекграунда, и, обычно, смотрится неплохо.
+
+            \item Ниже пример, где лучше было использовать блюр.
 
 \begin{figure}[!hbp]
 \centering
@@ -177,58 +218,74 @@ openany, % A chapter may start on either a recto or verso page.
 \caption{Not nice.}
 \end{minipage}
 \end{figure}
-                \item Если фон сливается с переведенным текстом, 
-                    или заблюренный английскй текст 
-                    добавляет слишком много белого/ черного на фон, то 
-                    можно добавить полупрозрачный бекграунд на переведенный текст.
-            \end{itemize}
 
-           \item \emph{Зафиксировать кадр, когда английский текст еще не появился.}
-
-            \begin{itemize}
-                \item Подходит в случае статической картинки на бэкграунде. Если 
-                на заднике красивая анимация~--- blur предпочтительнее.
-               
-            \item Если в оригинале естть zoom (динамическое увеличение
-                статической картинки) для добавления динамики, то нужно
-                добавить zoom и при переводе.
-
-        \end{itemize}
-        \textit{P.S.} В обучающих материалах есть видео-пример этого способа.
+        \item Если фон сливается с переведенным текстом, 
+            или заблюренный английскй текст 
+            добавляет слишком много белого/ черного на фон, то 
+            можно добавить полупрозрачный бекграунд на переведенный текст.
     \end{itemize}
-\item Чтобы скачать видео с YouTube можно воспользоваться сайтом
-    \href{https://www.y2mate.com/}{https://www.y2mate.com/}, скопировав и вставив 
-    ссылку на видео. 
 
-    Также, если видео уже открыто в браузере можно просто вставить "pp" после
-    слова youtube в ссылке, и y2mate откроется автоматически.
+   \item \emph{Зафиксировать кадр, когда английский текст еще не появился.}
 
-    Например, https://www.youtube.com/watch?v=Oi7eLmaL1DU нужно преобразовать
-    в https://www.youtube\textbf{pp}.com/watch?v=Oi7eLmaL1DU .
-\item     {\color{gray} В Isha Foundation в основном используются Final Cut и Adobe Premiere Pro, 
-    однако вы можете, использовать любой удобный для вас редактор.}
-    Например, DaVinci Resolve~---
-    профессиональный видеоредактор с бесплатной версией, которой нам более чем хватает. 
-
-\item Для пользователей MacOS самый простой вариант монтирующей системы~--- 
-    iMovie, но у нее есть три серьезных недостатка.
     \begin{itemize}
-    \item Нет возможности добавить текст поверх видео. То есть, придется делать
+        \item Подходит в случае статической картинки на бэкграунде. Если 
+        на заднике красивая анимация~--- blur предпочтительнее.
+       
+    \item Если в оригинале естть zoom (динамическое увеличение
+        статической картинки) для добавления динамики, то нужно
+        добавить zoom и при переводе.
+
+    \end{itemize}
+    \textit{P.S.} В обучающих материалах есть видео-пример этого способа.
+
+\item \emph{Если есть stem (видео без английского текста).}
+    
+    В данном случае действуем так: скачиваем и оригинал с текстом,
+    и стем. Добавляем их один поверх другого, и монтируем. В конце
+    можно просто отключить (сделать невидимым) трек 
+    с английским текстом.
+
+    Для заголовков, субтитров и т.д. стараемся, по возможности,
+    выбирать красивые эффекты вместо просто эффекта "Text".
+\end{itemize}
+
+\subsection{Как скачать видео} 
+Чтобы скачать видео с YouTube можно воспользоваться сайтом
+\href{https://www.y2mate.com/}{https://www.y2mate.com/}, скопировав и вставив 
+ссылку на видео. 
+
+Также, если видео уже открыто в браузере можно просто вставить "pp" после
+слова youtube в ссылке, и y2mate откроется автоматически.
+
+Например, https://www.youtube.com/watch?v=Oi7eLmaL1DU нужно преобразовать
+в https://www.youtube\textbf{pp}.com/watch?v=Oi7eLmaL1DU .
+
+\subsection{Где монтировать}
+В Isha Foundation в основном используются Final Cut и Adobe Premiere Pro, 
+однако вы можете, использовать любой удобный для вас редактор.
+
+Например, DaVinci Resolve~---
+профессиональный видеоредактор с бесплатной версией, которой нам более чем хватает. 
+
+Для пользователей MacOS самый простой вариант монтирующей системы~--- 
+iMovie, но у нее есть пара серьезных недостатков.
+\begin{itemize}
+    \item Нет возможности удобно добавить текст поверх видео.
+        То есть, придется делать
         картинку с перевдодм в отдельном приложении и наклеивать поверх.
         Это нарушает поток, и нужно будет повозиться, если придется исправлять текст.
     \item Можно использовать только два видео трека. Это ограничивает более 
         сложных монтаж, хотя обычно двух хватает.
-    \item Нет возможности по-человечески кастомизировать разрешение и формат видео. 
 \end{itemize}
-    Поэтому совет~--- скачать более профессиональное приложение, тем более что
-    DaVinci бесплатный =).
+Поэтому совет~--- скачать более профессиональное приложение, тем более что
+DaVinci бесплатный =).
 \end{enumerate}
 
 
 
 
-
-\subsection{Обучающие материалы}
+\newpage
+\section{Обучающие материалы}
 
 Монтировать совсем не сложно! В начале будет немножко трудно, но основы можно 
 освоить за пару часов. Главное~--- не бояться, и спрашивать, если что-то не понятно.
@@ -263,7 +320,10 @@ openany, % A chapter may start on either a recto or verso page.
 \end{itemize}
 
 
-\subsection{Test Task (Тренировочное видео) YouTube}
+
+
+\newpage
+\section{Test Task (Тренировочное видео) YouTube}
  
 Задание~--- смонтировать видео и выслать результат
 ответным сообщением.. 
@@ -295,8 +355,8 @@ openany, % A chapter may start on either a recto or verso page.
  
 
 \newpage
-\subsection{Технические моменты}
-\subsubsection{Установка шрифтов MacOs}\label{fonts}
+\section{Технические моменты}
+\subsection{Установка шрифтов MacOs}\label{fonts}
 \begin{enumerate}
     \item Скачайте шрифт, например, из Google Fonts.
     \item Откройте приложение \textbf{"font Book"}.
